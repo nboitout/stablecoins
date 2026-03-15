@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Stablecoins Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f4f1eb;
+    --surface: #faf8f4;
+    --ink: #1a1714;
+    --ink-2: #5c5650;
+    --ink-3: #9c9690;
+    --border: rgba(26,23,20,0.12);
+    --border-strong: rgba(26,23,20,0.25);
+    --green: #1a6b3c;
+    --green-bg: #e8f5ee;
+    --amber: #8a4f00;
+    --amber-bg: #fdf3e0;
+    --red: #991b1b;
+    --red-bg: #fef0f0;
+    --blue: #1a3a6b;
+    --blue-bg: #e8eef8;
+    --accent: #c8533a;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    border-bottom: 1px solid var(--border);
+    padding: 80px 48px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.3;
+    max-width: 60px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    max-width: 760px;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--ink-2);
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-3);
+    font-family: var(--font-mono);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* ── Layout ── */
+  .main { max-width: 1100px; margin: 0 auto; padding: 0 48px 120px; }
+
+  /* ── Section ── */
+  .section { padding: 80px 0 0; }
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .section-number {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .section-body { font-size: 15px; color: var(--ink-2); line-height: 1.75; max-width: 520px; }
+  .section-body strong { color: var(--ink); font-weight: 500; }
+
+  /* ── Mechanism cards ── */
+  .mechanisms { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 48px; }
+  .mech-card {
+    background: var(--surface);
+    padding: 32px 28px;
+    cursor: pointer;
+    transition: background .2s;
+    position: relative;
+  }
+  .mech-card:hover { background: #fff; }
+  .mech-card.active { background: #fff; }
+  .mech-card.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .mech-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .mech-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 8px; }
+  .mech-desc { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+
+  /* ── Detail panels ── */
+  .detail-panel { display: none; }
+  .detail-panel.active { display: block; }
+
+  /* ── Flow ── */
+  .flow {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 24px;
+  }
+  .flow-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 24px;
+  }
+  .flow-steps {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 130px;
+    padding: 16px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    position: relative;
+  }
+  .flow-step-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+  .flow-step-label { font-size: 13px; font-weight: 500; line-height: 1.4; }
+  .flow-step-sub { font-size: 11px; color: var(--ink-2); margin-top: 4px; }
+  .flow-chevron {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--ink-3);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ── Two-col ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+
+  /* ── Info box ── */
+  .info-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--surface);
+  }
+  .info-box-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-2);
+    padding: 5px 0;
+    line-height: 1.5;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+
+  /* ── Interactive sim ── */
+  .sim {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .sim-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 24px;
+  }
+  .sim-controls { display: flex; flex-direction: column; gap: 16px; }
+  .sim-row { display: flex; align-items: center; gap: 16px; }
+  .sim-label { font-size: 13px; color: var(--ink-2); min-width: 140px; }
+  input[type=range] {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: var(--border-strong);
+    border-radius: 2px;
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px; height: 16px;
+    background: var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .sim-value {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 48px;
+    text-align: right;
+  }
+  .sim-output {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-size: 13px;
+    transition: all .25s;
+  }
+  .sim-output-price {
+    font-family: var(--font-display);
+    font-size: 40px;
+    margin-bottom: 4px;
+  }
+  .sim-output-label { color: var(--ink-2); font-size: 13px; }
+  .sim-status { margin-top: 12px; font-size: 13px; padding: 10px 14px; border-radius: 8px; }
+
+  /* ── Examples row ── */
+  .examples { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ex-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    background: var(--surface);
+    color: var(--ink-2);
+  }
+  .ex-chip.defunct { text-decoration: line-through; opacity: .5; }
+
+  /* ── Danger box ── */
+  .danger-box {
+    background: var(--red-bg);
+    border: 1px solid rgba(153,27,27,.15);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .danger-box-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .danger-box p { font-size: 13px; color: #5c1a1a; line-height: 1.65; }
+
+  /* ── Comparison table ── */
+  .compare-section { padding-top: 80px; }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr 1fr;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--border);
+    gap: 1px;
+  }
+  .cg-cell {
+    background: var(--surface);
+    padding: 16px 20px;
+    font-size: 13px;
+  }
+  .cg-cell.header {
+    background: var(--ink);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 16px;
+    padding: 20px;
+  }
+  .cg-cell.header.empty { background: var(--bg); }
+  .cg-cell.row-label { font-size: 12px; color: var(--ink-3); font-family: var(--font-mono); letter-spacing: .05em; text-transform: uppercase; }
+  .cg-cell.alt { background: #fff; }
+  .rating { display: flex; gap: 3px; }
+  .r-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .r-fill { background: var(--ink); }
+  .r-empty { background: var(--border-strong); }
+
+  /* ── Footer ── */
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-3);
+    font-family: var(--font-mono);
+  }
+
+  /* ── Arbitrage explainer ── */
+  .arb-demo {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .arb-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .arb-node {
+    text-align: center;
+    flex: 1;
+    padding: 14px 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .arb-node-val { font-family: var(--font-display); font-size: 22px; margin-bottom: 4px; }
+  .arb-node-label { font-size: 11px; color: var(--ink-3); font-family: var(--font-mono); }
+  .arb-arrow { font-size: 18px; color: var(--ink-3); }
+  .profit-tag {
+    display: inline-block;
+    background: var(--green-bg);
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  /* ── Crash sim ── */
+  .spiral-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .spiral-step { padding: 16px 20px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+  .spiral-step.danger { border-color: rgba(153,27,27,.3); background: var(--red-bg); }
+  .spiral-num { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); margin-bottom: 6px; }
+  .spiral-label { font-size: 13px; font-weight: 500; }
+  .spiral-desc { font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+  .spiral-step.danger .spiral-label { color: var(--red); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 48px 24px 40px; }
+    .main { padding: 0 24px 80px; }
+    .section-header { grid-template-columns: 1fr; gap: 16px; }
+    .mechanisms { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr 1fr; }
+    .compare-grid .cg-cell.row-label { display: none; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Crypto explainer</div>
+  <h1>How <em>Stablecoins</em><br>stay stable</h1>
+  <p class="hero-sub">A stablecoin is a cryptocurrency designed to maintain a fixed value — usually $1.00. But there are three radically different ways to achieve that peg, each with its own risks.</p>
+  <div class="hero-meta">
+    <span>⬤ 3 mechanisms</span>
+    <span>⬤ Interactive</span>
+    <span>⬤ ~5 min read</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── Section 1 ── -->
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-number">01</div>
+        <div class="section-title">The core<br>challenge</div>
+      </div>
+      <div class="section-body">
+        Crypto prices are volatile by nature — Bitcoin can swing 10% in a day. Yet many use cases (payments, lending, savings) require price certainty. Stablecoins solve this by engineering mechanisms that continuously correct the token price back to $1. <strong>The question is: what backs up that promise?</strong>
+      </div>
+    </div>
+
+    <div class="arb-demo">
+      <div class="flow-title">The arbitrage engine — how any peg self-corrects</div>
+      <div class="arb-track">
+        <div class="arb-node">
+          <div class="arb-node-val" style="color:var(--red)">$0.97</div>
+          <div class="arb-node-label">Token dips</div>
+        </div>
+        <div class="arb-arrow">→</div>
+        <div class="arb-node">
+          <div class="arb-node-val">Buy cheap</div>
+          <div class="arb-node-label">on exchange</div>
+          <div class="profit-tag">$0.97</div>
+        </div>
+        <div class="arb-arrow">→</div>
+        <div class="arb-node">
+          <div class="arb-node-val">Redeem for</div>
+          <div class="arb-node-label">$1.00 backing</div>
+          <div class="profit-tag">+$0.03 profit</div>
+        </div>
+        <div class="arb-arrow">→</div>
+        <div class="arb-node">
+          <div class="arb-node-val" style="color:var(--green)">$1.00</div>
+          <div class="arb-node-label">Peg restored</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-2)">Traders hunt price gaps constantly. As long as redemption is guaranteed, any deviation from $1 triggers instant arbitrage — and the arbitrage itself closes the gap. The mechanism only fails if the redemption promise breaks.</p>
+    </div>
+  </div>
+
+  <!-- ── Section 2: Mechanisms ── -->
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-number">02</div>
+        <div class="section-title">Three<br>mechanisms</div>
+      </div>
+      <div class="section-body">
+        Each approach answers the same question differently: <strong>what can you always redeem one token for?</strong> Click a mechanism to explore it.
+      </div>
+    </div>
+
+    <div class="mechanisms">
+      <div class="mech-card active" onclick="switchMech('fiat')">
+        <div class="mech-badge" style="background:var(--green-bg);color:var(--green)">Most stable</div>
+        <div class="mech-title">Fiat-backed</div>
+        <div class="mech-desc">Real dollars held in a bank. One token = one dollar in custody. The simplest and most reliable approach.</div>
+      </div>
+      <div class="mech-card" onclick="switchMech('crypto')">
+        <div class="mech-badge" style="background:var(--amber-bg);color:var(--amber)">Decentralized</div>
+        <div class="mech-title">Crypto-backed</div>
+        <div class="mech-desc">Backed by crypto collateral locked in smart contracts — but over-collateralized to absorb volatility.</div>
+      </div>
+      <div class="mech-card" onclick="switchMech('algo')">
+        <div class="mech-badge" style="background:var(--red-bg);color:var(--red)">High risk</div>
+        <div class="mech-title">Algorithmic</div>
+        <div class="mech-desc">No collateral. Uses supply-and-demand mechanics and a paired token to maintain the peg algorithmically.</div>
+      </div>
+    </div>
+
+    <!-- FIAT -->
+    <div class="detail-panel active" id="panel-fiat">
+      <div class="flow">
+        <div class="flow-title">How it works — step by step</div>
+        <div class="flow-steps">
+          <div class="flow-step"><div class="flow-step-num">01</div><div class="flow-step-label">You deposit</div><div class="flow-step-sub">Send $100 USD to issuer</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">02</div><div class="flow-step-label">Cash is held</div><div class="flow-step-sub">Custodian bank holds it</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">03</div><div class="flow-step-label">Tokens minted</div><div class="flow-step-sub">100 USDC on-chain</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">04</div><div class="flow-step-label">Use freely</div><div class="flow-step-sub">Transfer, DeFi, payments</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">05</div><div class="flow-step-label">Redeem 1:1</div><div class="flow-step-sub">Burn tokens, get $100 back</div></div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--green)">Advantages</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Simplest mechanism — extremely reliable peg</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Easy 1:1 redemption at any time</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>No liquidation risk or complex mechanics</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Dominates market — most liquid stablecoins</div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--red)">Limitations</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Requires trusting a central custodian</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Issuer can freeze or blacklist wallets</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Depends on regular third-party audits</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Subject to banking system risks</div>
+        </div>
+      </div>
+      <div class="examples">
+        <span class="ex-chip">USDC (Circle)</span>
+        <span class="ex-chip">USDT (Tether)</span>
+        <span class="ex-chip">BUSD</span>
+        <span class="ex-chip">PYUSD (PayPal)</span>
+      </div>
+    </div>
+
+    <!-- CRYPTO -->
+    <div class="detail-panel" id="panel-crypto">
+      <div class="flow">
+        <div class="flow-title">How it works — step by step</div>
+        <div class="flow-steps">
+          <div class="flow-step"><div class="flow-step-num">01</div><div class="flow-step-label">Lock collateral</div><div class="flow-step-sub">Deposit $150 of ETH</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">02</div><div class="flow-step-label">Mint stablecoin</div><div class="flow-step-sub">Receive 100 DAI (67% LTV)</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">03</div><div class="flow-step-label">Monitor ratio</div><div class="flow-step-sub">Protocol tracks collateral value</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">04</div><div class="flow-step-label">Auto-liquidation</div><div class="flow-step-sub">Below 150% → ETH seized</div></div>
+          <div class="flow-chevron">›</div>
+          <div class="flow-step"><div class="flow-step-num">05</div><div class="flow-step-label">Peg protected</div><div class="flow-step-sub">DAI always fully backed</div></div>
+        </div>
+      </div>
+      <div class="sim">
+        <div class="sim-title">Collateralization ratio simulator</div>
+        <div class="sim-controls">
+          <div class="sim-row">
+            <span class="sim-label">ETH collateral value</span>
+            <input type="range" min="80" max="300" value="150" id="eth-val" oninput="updateCrypto()">
+            <span class="sim-value" id="eth-val-out">$150</span>
+          </div>
+        </div>
+        <div class="sim-output" id="crypto-out">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <div class="sim-output-price" id="cr-display">150%</div>
+              <div class="sim-output-label">collateral ratio (min: 150%)</div>
+            </div>
+            <div id="cr-badge" class="mech-badge" style="background:var(--green-bg);color:var(--green)">Safe</div>
+          </div>
+          <div class="sim-status" id="cr-msg" style="background:var(--green-bg);color:var(--green)">Position is safe. Your DAI is fully backed with buffer to absorb price moves.</div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--green)">Advantages</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Fully on-chain — transparent and auditable</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>No trusted custodian needed</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Governed by token holders</div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--red)">Limitations</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Capital inefficient — requires 150%+ locked</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Vulnerable in sharp market crashes</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Complex mechanics to understand</div>
+        </div>
+      </div>
+      <div class="examples">
+        <span class="ex-chip">DAI (MakerDAO)</span>
+        <span class="ex-chip">crvUSD (Curve)</span>
+        <span class="ex-chip">LUSD (Liquity)</span>
+      </div>
+    </div>
+
+    <!-- ALGO -->
+    <div class="detail-panel" id="panel-algo">
+      <div class="flow">
+        <div class="flow-title">The expansion / contraction loop</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+          <div style="background:var(--green-bg);border:1px solid rgba(26,107,60,.15);border-radius:12px;padding:20px">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:14px">Price above $1 → Expand supply</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>Token trades at $1.02</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>Protocol mints new tokens</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>More supply → price falls to $1</div>
+          </div>
+          <div style="background:var(--amber-bg);border:1px solid rgba(138,79,0,.15);border-radius:12px;padding:20px">
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:14px">Price below $1 → Contract supply</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--amber);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>Token trades at $0.98</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--amber);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>Users burn tokens for "bonds"</div>
+            <div class="info-item" style="align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:var(--amber);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>Less supply → price rises to $1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="danger-box">
+        <div class="danger-box-label">⚠ Death spiral risk</div>
+        <p>When confidence breaks, the seigniorage token crashes in value. The protocol can no longer incentivize bond purchases. Supply can't contract. The stablecoin loses its peg permanently. This is precisely what destroyed TerraUST and LUNA in May 2022 — $40 billion in value evaporated in under a week.</p>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:24px">
+        <div class="flow-title">The LUNA / TerraUST death spiral — May 2022</div>
+        <div class="spiral-grid">
+          <div class="spiral-step"><div class="spiral-num">Day 1</div><div class="spiral-label">Large UST withdrawal</div><div class="spiral-desc">$2B withdrawn from Anchor protocol, UST begins to depeg slightly</div></div>
+          <div class="spiral-step"><div class="spiral-num">Day 2</div><div class="spiral-label">Panic begins</div><div class="spiral-desc">UST falls to $0.92. Protocol mints massive LUNA to restore peg</div></div>
+          <div class="spiral-step danger"><div class="spiral-num">Day 3</div><div class="spiral-label">LUNA hyperinflation</div><div class="spiral-desc">Billions of LUNA minted, diluting supply and crashing LUNA price</div></div>
+          <div class="spiral-step danger"><div class="spiral-num">Day 5</div><div class="spiral-label">Total collapse</div><div class="spiral-desc">UST → $0.01. LUNA → $0.00. $40B in value destroyed</div></div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--green)">Theoretical advantages</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Capital efficient — no collateral needed</div>
+          <div class="info-item"><div class="dot" style="background:var(--green)"></div>Fully decentralized by design</div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label" style="color:var(--red)">Critical risks</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>No real backing — pure confidence game</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Catastrophic failure mode (death spiral)</div>
+          <div class="info-item"><div class="dot" style="background:var(--red)"></div>Failed in practice at scale</div>
+        </div>
+      </div>
+      <div class="examples">
+        <span class="ex-chip defunct">TerraUST (collapsed 2022)</span>
+        <span class="ex-chip">FRAX (hybrid model)</span>
+        <span class="ex-chip">AMPL (experimental)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Section 3: Comparison ── -->
+  <div class="section compare-section">
+    <div class="section-header">
+      <div>
+        <div class="section-number">03</div>
+        <div class="section-title">Side by<br>side</div>
+      </div>
+      <div class="section-body">
+        Each mechanism trades off differently on the key dimensions. There is no perfect stablecoin — only the right trade-off for your context.
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="cg-cell header empty"></div>
+      <div class="cg-cell header">Fiat-backed</div>
+      <div class="cg-cell header">Crypto-backed</div>
+      <div class="cg-cell header">Algorithmic</div>
+
+      <div class="cg-cell row-label">Peg stability</div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">Very high</div></div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-empty"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">High</div></div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">Low</div></div>
+
+      <div class="cg-cell row-label">Decentralization</div>
+      <div class="cg-cell"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">Centralized</div></div>
+      <div class="cg-cell"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-empty"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">High</div></div>
+      <div class="cg-cell"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">Full</div></div>
+
+      <div class="cg-cell row-label">Capital efficiency</div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">1:1 ratio</div></div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div><div class="r-dot r-empty"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">150%+ needed</div></div>
+      <div class="cg-cell alt"><div class="rating"><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div><div class="r-dot r-fill"></div></div><div style="font-size:12px;color:var(--ink-3);margin-top:4px">No collateral</div></div>
+
+      <div class="cg-cell row-label">Failure risk</div>
+      <div class="cg-cell"><div style="font-size:13px;color:var(--green)">Custodian insolvency</div></div>
+      <div class="cg-cell"><div style="font-size:13px;color:var(--amber)">Market crash cascade</div></div>
+      <div class="cg-cell"><div style="font-size:13px;color:var(--red)">Death spiral collapse</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>stablecoins.guide</span>
+  <span>For educational purposes only — not financial advice</span>
+</footer>
+
+<script>
+  function switchMech(id) {
+    document.querySelectorAll('.mech-card').forEach((c,i) => c.classList.remove('active'));
+    document.querySelectorAll('.detail-panel').forEach(p => p.classList.remove('active'));
+    const ids = ['fiat','crypto','algo'];
+    document.querySelectorAll('.mech-card')[ids.indexOf(id)].classList.add('active');
+    document.getElementById('panel-'+id).classList.add('active');
+  }
+
+  function updateCrypto() {
+    const val = +document.getElementById('eth-val').value;
+    document.getElementById('eth-val-out').textContent = '$'+val;
+    const ratio = Math.round(val);
+    document.getElementById('cr-display').textContent = ratio+'%';
+    const badge = document.getElementById('cr-badge');
+    const msg = document.getElementById('cr-msg');
+    if (ratio >= 150) {
+      badge.style.background = 'var(--green-bg)'; badge.style.color = 'var(--green)'; badge.textContent = 'Safe';
+      msg.style.background = 'var(--green-bg)'; msg.style.color = 'var(--green)';
+      msg.textContent = 'Position is safe. Your DAI is fully backed with buffer to absorb price moves.';
+    } else if (ratio >= 120) {
+      badge.style.background = 'var(--amber-bg)'; badge.style.color = 'var(--amber)'; badge.textContent = 'Warning';
+      msg.style.background = 'var(--amber-bg)'; msg.style.color = 'var(--amber)';
+      msg.textContent = 'Approaching the liquidation threshold. Top up collateral to avoid forced liquidation.';
+    } else {
+      badge.style.background = 'var(--red-bg)'; badge.style.color = 'var(--red)'; badge.textContent = 'Liquidated';
+      msg.style.background = 'var(--red-bg)'; msg.style.color = 'var(--red)';
+      msg.textContent = 'Position liquidated. Smart contract seized your ETH to repay DAI holders and protect the peg.';
+    }
+  }
+</script>
+</body>
+</html>
