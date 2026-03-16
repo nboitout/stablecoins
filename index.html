@@ -359,13 +359,24 @@ input[type=range]::-webkit-slider-thumb {
   <!-- ─────────── SLIDE 1: Title ─────────── -->
   <div class="slide active" id="s1">
     <div class="bg-circle" style="width:600px;height:600px;background:radial-gradient(circle,rgba(212,149,58,0.06) 0%,transparent 70%);right:-100px;top:-100px;"></div>
-    <div class="slide-label">Crypto · Masterclass</div>
-    <div class="big-title">How <em>Stablecoins</em><br>stay stable</div>
-    <div class="sub">Three mechanisms. One promise: always worth exactly $1.00.</div>
+    <div class="slide-label">Payments · Masterclass</div>
+    <div class="big-title">Stablecoins for<br><em>International</em><br>Transfers</div>
+    <div class="sub">A programmable upgrade to slow, expensive legacy rails — why this technology can replace SWIFT for cross-border payments.</div>
     <div class="pill-row">
-      <div class="pill">3 mechanisms</div>
-      <div class="pill">Interactive</div>
-      <div class="pill">5 slides</div>
+      <div class="pill">SWIFT vs stablecoins</div>
+      <div class="pill">8 slides</div>
+    </div>
+    <div style="display:flex;gap:20px;align-self:flex-start;margin-top:16px;flex-wrap:wrap">
+      <div style="background:rgba(224,90,90,0.08);border:1px solid rgba(224,90,90,0.2);border-radius:10px;padding:12px 18px">
+        <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px">SWIFT today</div>
+        <div style="font-size:15px;font-weight:500;color:var(--ink)">1–5 days &nbsp;·&nbsp; $25–50/tx &nbsp;·&nbsp; 6% avg cost</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Opaque fees · correspondent banking chains · banker hours only</div>
+      </div>
+      <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.2);border-radius:10px;padding:12px 18px">
+        <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:6px">Stablecoins</div>
+        <div style="font-size:15px;font-weight:500;color:var(--ink)">&lt;1 min &nbsp;·&nbsp; cents/tx &nbsp;·&nbsp; 24/7/365</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Transparent · programmable · borderless · no intermediary</div>
+      </div>
     </div>
     <div class="s1-line"></div>
     <div class="s1-num">01</div>
@@ -375,8 +386,8 @@ input[type=range]::-webkit-slider-thumb {
   <div class="slide" id="s2">
     <div class="bg-circle" style="width:700px;height:700px;background:radial-gradient(circle,rgba(212,149,58,0.04) 0%,transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);"></div>
     <div class="slide-label">The big picture</div>
-    <div class="h2" style="align-self:flex-start;margin-bottom:8px">The stablecoin war</div>
-    <div style="font-size:18px;color:var(--ink-3);font-family:var(--font-m);align-self:flex-start;margin-bottom:36px">Banking vs. crypto rails — stablecoins are the contested bridge</div>
+    <div class="h2" style="align-self:flex-start;margin-bottom:6px">Two worlds — one <em style="color:var(--gold);font-style:italic">bridge</em></div>
+    <div style="font-size:16px;color:var(--ink-3);font-family:var(--font-m);align-self:flex-start;margin-bottom:20px">Stablecoins were built to connect the legacy banking system to the on-chain world</div>
     <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;max-width:1100px;align-items:stretch">
 
       <!-- LEFT: Traditional Banking -->
@@ -401,15 +412,38 @@ input[type=range]::-webkit-slider-thumb {
         <div style="margin-top:20px;font-family:var(--font-m);font-size:12px;color:#5a8ab0;letter-spacing:.06em">Closed, regulated money</div>
       </div>
 
-      <!-- CENTER: Bridge -->
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:0 28px;min-width:180px">
-        <div style="font-family:var(--font-d);font-size:15px;color:var(--ink-3);margin-bottom:16px;text-align:center;font-style:italic">the bridge</div>
-        <div style="width:2px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold));margin-bottom:0"></div>
-        <div style="background:var(--gold-dim);border:1px solid rgba(212,149,58,0.35);border-radius:12px;padding:16px 20px;text-align:center;margin:0">
-          <div style="font-family:var(--font-d);font-size:22px;color:var(--gold);line-height:1.2">Stable<br>coins</div>
-        </div>
-        <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin-top:0"></div>
-        <div style="font-size:13px;color:var(--ink-3);text-align:center;line-height:1.6;max-width:140px;margin-top:16px">Interface between bank money and digital markets</div>
+      <!-- CENTER: Bridge visual -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:0 12px;min-width:210px">
+        <svg width="180" height="150" viewBox="0 0 180 150" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+          <defs>
+            <marker id="ba1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#5a8cd0" stroke-width="2" stroke-linecap="round"/></marker>
+            <marker id="ba2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#4caf82" stroke-width="2" stroke-linecap="round"/></marker>
+          </defs>
+          <!-- road deck -->
+          <rect x="0" y="72" width="180" height="12" rx="2" fill="rgba(212,149,58,0.15)" stroke="rgba(212,149,58,0.35)" stroke-width="0.5"/>
+          <!-- main arch -->
+          <path d="M8 84 Q90 14 172 84" fill="none" stroke="#d4953a" stroke-width="3" stroke-linecap="round"/>
+          <!-- suspender cables -->
+          <line x1="90" y1="16" x2="68" y2="72" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
+          <line x1="90" y1="16" x2="112" y2="72" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
+          <line x1="90" y1="16" x2="46" y2="72" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
+          <line x1="90" y1="16" x2="134" y2="72" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
+          <line x1="90" y1="16" x2="26" y2="72" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
+          <line x1="90" y1="16" x2="154" y2="72" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
+          <!-- traffic arrows on deck -->
+          <line x1="10" y1="78" x2="76" y2="78" stroke="#5a8cd0" stroke-width="2" marker-end="url(#ba1)"/>
+          <line x1="170" y1="78" x2="104" y2="78" stroke="#4caf82" stroke-width="2" marker-end="url(#ba2)"/>
+          <!-- peak medallion -->
+          <circle cx="90" cy="16" r="18" fill="rgba(212,149,58,0.12)" stroke="#d4953a" stroke-width="1.5"/>
+          <text x="90" y="12" font-family="Playfair Display,serif" font-size="9" fill="#d4953a" text-anchor="middle" font-style="italic">Stable</text>
+          <text x="90" y="23" font-family="Playfair Display,serif" font-size="9" fill="#d4953a" text-anchor="middle" font-style="italic">coins</text>
+          <!-- pillars -->
+          <rect x="0" y="84" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
+          <rect x="164" y="84" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
+          <!-- label -->
+          <text x="90" y="148" font-family="DM Mono,monospace" font-size="9" fill="rgba(240,237,230,0.4)" text-anchor="middle" letter-spacing="2" text-transform="uppercase">THE BRIDGE</text>
+        </svg>
+        <div style="font-size:12px;color:var(--ink-3);text-align:center;line-height:1.5;max-width:160px;font-family:var(--font-m);letter-spacing:.03em">Interface between bank money and digital markets</div>
       </div>
 
       <!-- RIGHT: Crypto World -->
@@ -441,14 +475,109 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
 
-  <!-- ─────────── SLIDE 3: Transaction Flow ─────────── -->
-  <div class="slide" id="s3" style="padding:36px 56px 110px;">
-    <div class="slide-label" style="align-self:flex-start">Transaction flow</div>
-    <div style="font-family:var(--font-d);font-size:clamp(18px,2.2vw,28px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
-      The stablecoin sandwich: fiat <em style="color:var(--gold);font-style:italic">&#8594; stablecoin &#8594;</em> fiat
+  <!-- ─────────── SLIDE 4: Fiat-backed ─────────── -->
+  <div class="slide" id="s3">
+    <div class="slide-label">How it works</div>
+    <div class="mech-layout">
+      <div>
+        <div class="h2" style="margin-bottom:6px">Fiat-backed</div>
+        <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">Real dollars in a real bank</div>
+        <div class="flow-steps">
+          <div class="fstep"><div class="fstep-num">01</div><div><div class="fstep-label">You deposit $100 USD</div><div class="fstep-sub">Sent to the issuer (e.g. Circle)</div></div></div>
+          <div class="fstep"><div class="fstep-num">02</div><div><div class="fstep-label">Custodian holds the cash</div><div class="fstep-sub">Regulated bank, audited reserves</div></div></div>
+          <div class="fstep"><div class="fstep-num">03</div><div><div class="fstep-label">100 USDC minted on-chain</div><div class="fstep-sub">1:1 — one token per dollar</div></div></div>
+          <div class="fstep"><div class="fstep-num">04</div><div><div class="fstep-label">Redeem anytime 1:1</div><div class="fstep-sub">Burn tokens → receive USD back</div></div></div>
+        </div>
+        <div class="examples" style="margin-top:20px">
+          <span class="ex-chip">USDC</span><span class="ex-chip">USDT</span><span class="ex-chip">PYUSD</span>
+        </div>
+      </div>
+      <div>
+        <div class="pc-grid">
+          <div class="pc-box">
+            <div class="pc-title" style="color:var(--green)">Advantages</div>
+            <div class="pc-item dot-g">Extremely reliable peg</div>
+            <div class="pc-item dot-g">Easy 1:1 redemption</div>
+            <div class="pc-item dot-g">No liquidation risk</div>
+            <div class="pc-item dot-g">Most liquid stablecoins</div>
+          </div>
+          <div class="pc-box">
+            <div class="pc-title" style="color:var(--red)">Limitations</div>
+            <div class="pc-item dot-r">Requires trusted custodian</div>
+            <div class="pc-item dot-r">Can freeze wallets</div>
+            <div class="pc-item dot-r">Depends on audits</div>
+            <div class="pc-item dot-r">Banking system risk</div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:12px">
+          <div style="font-family:var(--font-m);font-size:14px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Stability rating</div>
+          <div class="stars" style="margin-bottom:4px">
+            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+          </div>
+          <div style="font-size:17px;color:var(--ink-2)">Highest available — battle-tested at scale</div>
+        </div>
+      </div>
     </div>
-    <div style="font-size:13px;color:var(--ink-3);align-self:flex-start;margin-bottom:10px;font-family:var(--font-m);flex-shrink:0">
-      Providers involved in a typical cross-border stablecoin transaction
+  </div>
+
+  <!-- ─────────── SLIDE 8: Comparison ─────────── -->
+  <div class="slide" id="s4">
+    <div class="slide-label">Summary</div>
+    <div class="h2" style="align-self:flex-start;margin-bottom:28px;width:100%;max-width:1100px">Three models —<br>one promise</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1100px">
+
+      <!-- Fiat-backed -->
+      <div style="background:var(--surface);border:1px solid rgba(90,140,200,0.3);border-radius:16px;padding:28px 24px">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5a8cd0;margin-bottom:10px">Fiat-backed</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#a8c8e8">The standard</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Each token backed 1:1 by real dollars or short-term government bills held in custody. The dominant model today.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--ink)">1:1</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Custodian</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#5a8cd0">USDC · USDT · PYUSD</span></div>
+        </div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--green)">&#10003; Proven, regulated, audited. Used by banks &amp; institutions.</div>
+      </div>
+
+      <!-- Crypto-backed -->
+      <div style="background:var(--surface);border:1px solid rgba(140,100,220,0.25);border-radius:16px;padding:28px 24px;opacity:0.75">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a6ad4;margin-bottom:10px">Crypto-backed</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#c8b0f0">Closer to a hedge fund</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Over-collateralised with volatile crypto assets locked in smart contracts. Capital-inefficient — closer to a leveraged DeFi position than a true stable reserve.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star empty"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--amber)">150%+</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Liquidation cascade</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#8a6ad4">DAI · crvUSD · LUSD</span></div>
+        </div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--amber)">&#9888; Niche use-case. Complex risk profile. Not for mainstream finance.</div>
+      </div>
+
+      <!-- Algorithmic -->
+      <div style="background:var(--surface);border:1px solid rgba(224,90,90,0.25);border-radius:16px;padding:28px 24px;opacity:0.65">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Algorithmic</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#f0a0a0">A failed experiment</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">No collateral backing. Relies entirely on market confidence and a paired token to maintain the peg. Catastrophically failed at scale in 2022.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star empty"></div><div class="star empty"></div><div class="star empty"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--green)">0% (no collateral)</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--red)">Death spiral</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:var(--red);text-decoration:line-through">TerraUST (2022)</span></div>
+        </div>
+        <div style="background:var(--red-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--red)">&#10007; $40B destroyed in May 2022. Largely abandoned by the industry.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─────────── SLIDE 3: Transaction Flow ─────────── -->
+  <div class="slide" id="s5" style="padding:36px 56px 110px;">
+    <div style="display:flex;align-items:center;gap:16px;align-self:flex-start;flex-shrink:0;margin-bottom:8px;flex-wrap:wrap">
+      <div class="slide-label" style="margin-bottom:0">Transaction flow</div>
+      <div style="width:1px;height:16px;background:var(--border2)"></div>
+      <div style="font-family:var(--font-d);font-size:clamp(16px,1.9vw,24px);letter-spacing:-0.01em">The fiat <em style="color:var(--gold);font-style:italic">&#8594; stablecoin &#8594;</em> fiat sandwich</div>
+      <div style="font-size:12px;color:var(--ink-3);font-family:var(--font-m)">Providers in a cross-border stablecoin transaction</div>
     </div>
     <div style="flex:1;width:100%;min-height:0;overflow:hidden">
       <svg width="100%" height="100%" viewBox="0 0 1160 420" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -616,99 +745,341 @@ input[type=range]::-webkit-slider-thumb {
 
 
 
-  <!-- ─────────── SLIDE 4: Fiat-backed ─────────── -->
-  <div class="slide" id="s4">
-    <div class="slide-label">How it works</div>
-    <div class="mech-layout">
-      <div>
-        <div class="h2" style="margin-bottom:6px">Fiat-backed</div>
-        <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">Real dollars in a real bank</div>
-        <div class="flow-steps">
-          <div class="fstep"><div class="fstep-num">01</div><div><div class="fstep-label">You deposit $100 USD</div><div class="fstep-sub">Sent to the issuer (e.g. Circle)</div></div></div>
-          <div class="fstep"><div class="fstep-num">02</div><div><div class="fstep-label">Custodian holds the cash</div><div class="fstep-sub">Regulated bank, audited reserves</div></div></div>
-          <div class="fstep"><div class="fstep-num">03</div><div><div class="fstep-label">100 USDC minted on-chain</div><div class="fstep-sub">1:1 — one token per dollar</div></div></div>
-          <div class="fstep"><div class="fstep-num">04</div><div><div class="fstep-label">Redeem anytime 1:1</div><div class="fstep-sub">Burn tokens → receive USD back</div></div></div>
+  <!-- ─────────── SLIDE 4: SEPA vs Stablecoins ─────────── -->
+  <div class="slide" id="s6" style="padding:36px 64px 110px;">
+    <div class="slide-label" style="align-self:flex-start">Euro payments · Context</div>
+    <div style="font-family:var(--font-d);font-size:clamp(20px,2.5vw,34px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
+      Same promise: instant euros. <em style="color:var(--gold);font-style:italic">Different superpower.</em>
+    </div>
+    <div style="font-size:13px;color:var(--ink-3);align-self:flex-start;margin-bottom:16px;font-family:var(--font-m);flex-shrink:0">
+      Both move euros 24/7 digitally — but they are not optimised for the same world
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 220px 1fr;gap:0;width:100%;max-width:1140px;flex:1;min-height:0">
+
+      <!-- ── LEFT: SEPA Instant ── -->
+      <div style="background:rgba(26,28,40,0.9);border:1px solid rgba(90,140,200,0.25);border-radius:16px 0 0 16px;padding:24px 22px;border-right:none;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--font-m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5a8cd0;margin-bottom:2px">SEPA Instant</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:#a8c8e8;margin-bottom:8px;line-height:1.1">The trusted<br>banking rail</div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;flex:1">
+          <div style="background:rgba(90,140,200,0.07);border:1px solid rgba(90,140,200,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#5a8cd0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">⚡ Speed</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Under 10 seconds · 24/7/365</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Settles in central bank money via ECB TIPS</div>
+          </div>
+          <div style="background:rgba(90,140,200,0.07);border:1px solid rgba(90,140,200,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#5a8cd0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">🏛 Trust anchor</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Bank money + ECB infrastructure</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Regulated, insured, inside the eurozone perimeter</div>
+          </div>
+          <div style="background:rgba(90,140,200,0.07);border:1px solid rgba(90,140,200,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#5a8cd0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">🎯 Best for</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Invoices · payroll · merchants · retail</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Anywhere payer and payee are in the euro banking system</div>
+          </div>
+          <div style="background:rgba(90,140,200,0.07);border:1px solid rgba(90,140,200,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#5a8cd0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">💪 Superpower</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Reach · regulatory fit · real-economy trust</div>
+          </div>
         </div>
-        <div class="examples" style="margin-top:20px">
-          <span class="ex-chip">USDC</span><span class="ex-chip">USDT</span><span class="ex-chip">PYUSD</span>
+        <div style="background:rgba(90,140,200,0.12);border-radius:8px;padding:10px 14px;font-size:13px;color:#a8c8e8;font-style:italic;margin-top:4px">
+          "Send regulated euros instantly inside the existing European economy."
+        </div>
+        <div style="border-top:1px solid rgba(90,140,200,0.15);padding:9px 0 0;font-size:12px;color:#7aacda;margin-top:4px">
+          <span style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;opacity:.6;display:block;margin-bottom:2px">Use when</span>
+          Payer &amp; merchant in euro banking · fast payment · no on-chain logic needed
         </div>
       </div>
+
+      <!-- ── CENTRE: contrast column ── -->
+      <div style="background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 12px">
+        <div style="width:1px;flex:1;background:linear-gradient(to bottom,transparent,var(--border2));margin-bottom:8px"></div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;width:100%">
+          <!-- row labels -->
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center">
+            <div style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)">Trust anchor</div>
+          </div>
+          <div style="height:18px"></div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center">
+            <div style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)">Best for</div>
+          </div>
+          <div style="height:18px"></div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center">
+            <div style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)">Superpower</div>
+          </div>
+        </div>
+
+        <!-- VS badge -->
+        <div style="background:var(--gold-dim);border:1px solid rgba(212,149,58,0.3);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:15px;color:var(--gold);flex-shrink:0;margin:14px 0">vs</div>
+
+        <!-- closing line -->
+        <div style="width:1px;flex:1;background:linear-gradient(to top,transparent,var(--border2));margin-top:8px"></div>
+      </div>
+
+      <!-- ── RIGHT: Euro Stablecoins ── -->
+      <div style="background:rgba(20,26,20,0.9);border:1px solid rgba(76,175,130,0.25);border-radius:0 16px 16px 0;padding:24px 22px;border-left:none;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--font-m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4caf82;margin-bottom:2px">Euro stablecoins</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:#8de0b8;margin-bottom:8px;line-height:1.1">Programmable<br>on-chain euros</div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;flex:1">
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">⚡ Speed</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Near-instant on most chains</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Depends on chain, congestion, on/off-ramp setup</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">🔐 Trust anchor</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Private issuer · MiCA regulated</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Redeemable, backed by reserves — but issuer dependent</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">🎯 Best for</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Smart contracts · tokenised assets · agents</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">On-chain marketplaces, DeFi, crypto-native workflows</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:12px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">💪 Superpower</div>
+            <div style="font-size:14px;color:var(--ink);font-weight:500">Programmability · composability · automation</div>
+            <div style="font-size:12px;color:var(--ink-3);margin-top:3px">Escrow · conditional release · split payments · machine-to-machine</div>
+          </div>
+        </div>
+        <div style="background:rgba(76,175,130,0.10);border-radius:8px;padding:10px 14px;font-size:13px;color:#8de0b8;font-style:italic;margin-top:4px">
+          "Move euros inside software-native, tokenised, or agentic systems."
+        </div>
+        <div style="border-top:1px solid rgba(76,175,130,0.15);padding:9px 0 0;font-size:12px;color:#6aba98;margin-top:4px">
+          <span style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;opacity:.6;display:block;margin-bottom:2px">Use when</span>
+          On-chain transaction · software-controlled money · atomic settlement needed
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────── SLIDE 5: Fracturedcoin ─────────── -->
+  <div class="slide" id="s7">
+    <div class="bg-circle" style="width:500px;height:500px;background:radial-gradient(circle,rgba(224,90,90,0.05) 0%,transparent 70%);right:-100px;top:-100px;"></div>
+    <div class="slide-label" style="align-self:flex-start">BIS · March 2026</div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;width:100%;max-width:1160px;align-items:start">
+
+      <!-- LEFT: main argument -->
       <div>
-        <div class="pc-grid">
-          <div class="pc-box">
-            <div class="pc-title" style="color:var(--green)">Advantages</div>
-            <div class="pc-item dot-g">Extremely reliable peg</div>
-            <div class="pc-item dot-g">Easy 1:1 redemption</div>
-            <div class="pc-item dot-g">No liquidation risk</div>
-            <div class="pc-item dot-g">Most liquid stablecoins</div>
+        <div style="font-family:var(--font-d);font-size:clamp(26px,3vw,42px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:8px">
+          Stablecoin <em style="color:var(--red);font-style:italic">= Fracturedcoin</em>
+        </div>
+        <div style="font-size:16px;color:var(--ink-3);font-family:var(--font-m);margin-bottom:24px;letter-spacing:.04em">
+          Fragmentation is a feature, not a bug — BIS / Hyun Song Shin (2026)
+        </div>
+
+        <!-- Core thesis -->
+        <div style="background:rgba(224,90,90,0.07);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:18px 20px;margin-bottom:20px">
+          <div style="font-size:16px;color:#f0a0a0;line-height:1.65">True money requires <strong style="color:var(--ink);font-weight:500">singleness</strong> — one unit accepted seamlessly everywhere. Stablecoins structurally fail this property. Blockchain congestion is deliberately engineered to reward validators, making fragmentation <em>irreducible</em>.</div>
+        </div>
+
+        <!-- 4 failure points grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px">
+            <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px">Same issuer, different rails</div>
+            <div style="font-size:14px;color:var(--ink-2);line-height:1.5">USDC on Ethereum ≠ USDC on Solana. They are non-fungible tokens referencing the same issuer.</div>
+            <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+              <span style="font-family:var(--font-m);font-size:11px;background:rgba(224,90,90,0.1);color:var(--red);padding:3px 8px;border-radius:4px">USDT: 107 chains</span>
+              <span style="font-family:var(--font-m);font-size:11px;background:rgba(224,90,90,0.1);color:var(--red);padding:3px 8px;border-radius:4px">USDC: 125 chains</span>
+            </div>
           </div>
-          <div class="pc-box">
-            <div class="pc-title" style="color:var(--red)">Limitations</div>
-            <div class="pc-item dot-r">Requires trusted custodian</div>
-            <div class="pc-item dot-r">Can freeze wallets</div>
-            <div class="pc-item dot-r">Depends on audits</div>
-            <div class="pc-item dot-r">Banking system risk</div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px">
+            <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);margin-bottom:8px">The bridge tax</div>
+            <div style="font-size:14px;color:var(--ink-2);line-height:1.5">Moving between chains adds time, cost, and operational risk. Bridge exploits cost users</div>
+            <div style="margin-top:10px;font-family:var(--font-d);font-size:22px;color:var(--amber)">$2.5B+</div>
+            <div style="font-size:12px;color:var(--ink-3)">in losses 2021–2024</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px">
+            <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#8a6ad4;margin-bottom:8px">Congestion is designed in</div>
+            <div style="font-size:14px;color:var(--ink-2);line-height:1.5">Capacity is capped to sustain gas fee revenue for validators. A busy chain is a secure chain — high fees are the product, not a problem.</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px">
+            <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#5a8cd0;margin-bottom:8px">Layer 2 doesn't fix it</div>
+            <div style="font-size:14px;color:var(--ink-2);line-height:1.5">L2 lowers costs but creates no shared liquidity pool or settlement layer — it multiplies non-fungible platforms instead.</div>
           </div>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:12px">
-          <div style="font-family:var(--font-m);font-size:14px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Stability rating</div>
-          <div class="stars" style="margin-bottom:4px">
-            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-          </div>
-          <div style="font-size:17px;color:var(--ink-2)">Highest available — battle-tested at scale</div>
+      </div>
+
+      <!-- RIGHT: trilemma + user sorting -->
+      <div style="display:flex;flex-direction:column;gap:14px">
+
+        <!-- Scalability trilemma -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px">
+          <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:16px">Vitalik Buterin's scalability trilemma</div>
+          <svg width="100%" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>.tl{font-family:"DM Sans",sans-serif;font-size:12px;font-weight:500}.ts{font-family:"DM Mono",monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em}</style>
+            </defs>
+            <!-- Triangle -->
+            <polygon points="140,18 260,158 20,158" fill="none" stroke="rgba(240,237,230,0.15)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <!-- Vertices -->
+            <circle cx="140" cy="18"  r="28" fill="rgba(90,140,200,0.12)" stroke="#5a8cd0" stroke-width="1"/>
+            <text x="140" y="13"  class="ts" fill="#5a8cd0" text-anchor="middle">Decentralised</text>
+            <text x="140" y="25"  class="ts" fill="#6a90c0" text-anchor="middle">✓ crypto</text>
+            <circle cx="260" cy="158" r="28" fill="rgba(76,175,130,0.12)" stroke="#4caf82" stroke-width="1"/>
+            <text x="260" y="154" class="ts" fill="#4caf82" text-anchor="middle">Secure</text>
+            <text x="260" y="166" class="ts" fill="#4a9a72" text-anchor="middle">✓ costly</text>
+            <circle cx="20"  cy="158" r="28" fill="rgba(212,149,58,0.12)" stroke="#d4953a" stroke-width="1"/>
+            <text x="20"  y="154" class="ts" fill="#d4953a" text-anchor="middle">Scalable</text>
+            <text x="20"  y="166" class="ts" fill="#c0853a" text-anchor="middle">✗ tradeoff</text>
+            <!-- Centre label -->
+            <text x="140" y="100" class="tl" fill="rgba(224,90,90,0.9)" text-anchor="middle">Pick only 2</text>
+            <text x="140" y="115" style="font-family:'DM Mono',monospace;font-size:9px" fill="var(--ink-3)" text-anchor="middle">impossible to have all three</text>
+          </svg>
         </div>
+
+        <!-- User sorting -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px">
+          <div style="font-family:var(--font-m);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px">How congestion splits users</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="padding:12px;border:1px solid rgba(212,149,58,0.2);border-radius:8px;background:rgba(212,149,58,0.05)">
+              <div style="font-size:12px;font-weight:500;color:var(--amber);margin-bottom:4px">Price-sensitive</div>
+              <div style="font-size:12px;color:var(--ink-3);line-height:1.4">Flee to cheap chains → more fragmentation</div>
+            </div>
+            <div style="padding:12px;border:1px solid rgba(90,140,200,0.2);border-radius:8px;background:rgba(90,140,200,0.05)">
+              <div style="font-size:12px;font-weight:500;color:#5a8cd0;margin-bottom:4px">Security-sensitive</div>
+              <div style="font-size:12px;color:var(--ink-3);line-height:1.4">Stay on expensive chains → pay the rent</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pull quote -->
+        <div style="border:1px solid rgba(224,90,90,0.2);border-radius:14px;padding:20px;background:rgba(224,90,90,0.04)">
+          <div style="font-family:var(--font-d);font-size:15px;font-style:italic;color:#f0b0b0;line-height:1.6;margin-bottom:10px">"Stable in price, fractured in settlement."</div>
+          <div style="font-family:var(--font-m);font-size:11px;color:var(--ink-3)">FT Alphaville · BIS Working Paper 1335 · March 2026</div>
+        </div>
+
       </div>
     </div>
   </div>
 
-  <!-- ─────────── SLIDE 8: Comparison ─────────── -->
-  <div class="slide" id="s5">
-    <div class="slide-label">Summary</div>
-    <div class="h2" style="align-self:flex-start;margin-bottom:28px;width:100%;max-width:1100px">Three models —<br>one promise</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1100px">
+  
+</div>
 
-      <!-- Fiat-backed -->
-      <div style="background:var(--surface);border:1px solid rgba(90,140,200,0.3);border-radius:16px;padding:28px 24px">
-        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5a8cd0;margin-bottom:10px">Fiat-backed</div>
-        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#a8c8e8">The standard</div>
-        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Each token backed 1:1 by real dollars or short-term government bills held in custody. The dominant model today.</div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--ink)">1:1</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Custodian</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#5a8cd0">USDC · USDT · PYUSD</span></div>
+  <!-- ─────────── SLIDE 8: Agentic Commerce ─────────── -->
+  <div class="slide" id="s8" style="padding:36px 56px 110px;">
+    <div style="display:flex;align-items:center;gap:16px;align-self:flex-start;flex-shrink:0;margin-bottom:6px">
+      <div class="slide-label" style="margin-bottom:0">What comes next</div>
+      <div style="width:1px;height:16px;background:var(--border2)"></div>
+      <div style="font-size:13px;color:var(--ink-3);font-family:var(--font-m)">Visa · Mastercard · March 2025</div>
+    </div>
+    <div style="font-family:var(--font-d);font-size:clamp(20px,2.4vw,32px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
+      Agentic commerce: <em style="color:var(--gold);font-style:italic">cards first,</em> stablecoins where they add value
+    </div>
+    <div style="font-size:13px;color:var(--ink-3);align-self:flex-start;margin-bottom:16px;font-family:var(--font-m);flex-shrink:0">
+      AI agents will buy things — the question is which rails they use, and when
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 220px 1fr;gap:0;width:100%;max-width:1160px;flex:1;min-height:0">
+
+      <!-- ── LEFT: Cards first (Phase 1) ── -->
+      <div style="background:rgba(22,24,36,0.95);border:1px solid rgba(90,120,210,0.28);border-radius:16px 0 0 16px;padding:22px 20px;border-right:none;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--font-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7090d8;margin-bottom:2px">Phase 1</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:#b0c4f8;margin-bottom:8px;line-height:1.1">Cards as the<br>trust wrapper</div>
+        <div style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:12px">For the first wave of shopping agents, networks don't need to reinvent commerce — they need to make <strong style="color:var(--ink);font-weight:500">existing commerce safe for machines.</strong></div>
+
+        <div style="display:flex;flex-direction:column;gap:7px;flex:1">
+          <div style="background:rgba(90,120,210,0.07);border:1px solid rgba(90,120,210,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#7090d8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Global acceptance</div>
+            <div style="font-size:14px;color:var(--ink)">Millions of merchants already on card rails — agents inherit that instantly</div>
+          </div>
+          <div style="background:rgba(90,120,210,0.07);border:1px solid rgba(90,120,210,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#7090d8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Built-in security controls</div>
+            <div style="font-size:14px;color:var(--ink)">Fraud protection · tokenisation · dispute &amp; refund · spend limits</div>
+          </div>
+          <div style="background:rgba(90,120,210,0.07);border:1px solid rgba(90,120,210,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#7090d8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Visa Intelligent Commerce · Mastercard Agent Pay</div>
+            <div style="font-size:14px;color:var(--ink)">Explicit infrastructure for agent identity, control, and trusted machine spending</div>
+          </div>
         </div>
-        <div style="background:var(--green-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--green)">&#10003; Proven, regulated, audited. Used by banks &amp; institutions.</div>
+
+        <div style="border-top:1px solid rgba(90,120,210,0.15);padding-top:10px;font-size:13px;color:#7090d8;font-style:italic">
+          "Let this agent buy safely from normal merchants — use existing rails."
+        </div>
       </div>
 
-      <!-- Crypto-backed -->
-      <div style="background:var(--surface);border:1px solid rgba(140,100,220,0.25);border-radius:16px;padding:28px 24px;opacity:0.75">
-        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a6ad4;margin-bottom:10px">Crypto-backed</div>
-        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#c8b0f0">Closer to a hedge fund</div>
-        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Over-collateralised with volatile crypto assets locked in smart contracts. Capital-inefficient — closer to a leveraged DeFi position than a true stable reserve.</div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star empty"></div></div></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--amber)">150%+</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Liquidation cascade</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#8a6ad4">DAI · crvUSD · LUSD</span></div>
+      <!-- ── CENTRE: comparison table ── -->
+      <div style="background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);display:flex;flex-direction:column;align-items:stretch;padding:20px 10px;gap:0">
+        <div style="font-family:var(--font-d);font-size:13px;font-style:italic;color:var(--gold);text-align:center;margin-bottom:16px">Cards vs stablecoins</div>
+
+        <!-- header row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:6px">
+          <div style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#7090d8;text-align:center;padding:4px">Card rails</div>
+          <div style="font-family:var(--font-m);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#4caf82;text-align:center;padding:4px">Stablecoins</div>
         </div>
-        <div style="background:var(--amber-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--amber)">&#9888; Niche use-case. Complex risk profile. Not for mainstream finance.</div>
+
+        <!-- row 1 -->
+        <div style="background:var(--bg);border-radius:6px;padding:6px 8px;margin-bottom:4px">
+          <div style="font-family:var(--font-m);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-bottom:4px">Primary strength</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+            <div style="font-size:11px;color:#b0c4f8;text-align:center;font-weight:500">Global trust &amp; acceptance</div>
+            <div style="font-size:11px;color:#8de0b8;text-align:center;font-weight:500">Programmable liquidity</div>
+          </div>
+        </div>
+        <!-- row 2 -->
+        <div style="background:var(--bg);border-radius:6px;padding:6px 8px;margin-bottom:4px">
+          <div style="font-family:var(--font-m);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-bottom:4px">Ideal use case</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+            <div style="font-size:11px;color:#b0c4f8;text-align:center">Buying from normal merchants</div>
+            <div style="font-size:11px;color:#8de0b8;text-align:center">Complex multi-agent workflows</div>
+          </div>
+        </div>
+        <!-- row 3 -->
+        <div style="background:var(--bg);border-radius:6px;padding:6px 8px;margin-bottom:4px">
+          <div style="font-family:var(--font-m);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-bottom:4px">Operational goal</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+            <div style="font-size:11px;color:#b0c4f8;text-align:center">Safety &amp; familiarity</div>
+            <div style="font-size:11px;color:#8de0b8;text-align:center">Speed &amp; conditional logic</div>
+          </div>
+        </div>
+        <!-- row 4 -->
+        <div style="background:var(--bg);border-radius:6px;padding:6px 8px;">
+          <div style="font-family:var(--font-m);font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-bottom:4px">Settlement</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+            <div style="font-size:11px;color:#b0c4f8;text-align:center">T+1 via acquirer</div>
+            <div style="font-size:11px;color:#8de0b8;text-align:center">Near-instant, 24/7</div>
+          </div>
+        </div>
+
+        <!-- arrow flow -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px">
+          <div style="width:8px;height:8px;border-radius:50%;background:#7090d8"></div>
+          <div style="flex:1;height:2px;background:linear-gradient(to right,#7090d8,var(--gold),#4caf82)"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#4caf82"></div>
+        </div>
+        <div style="font-family:var(--font-m);font-size:9px;color:var(--ink-3);text-align:center;margin-top:6px;letter-spacing:.04em">phase 1 → phase 2</div>
       </div>
 
-      <!-- Algorithmic -->
-      <div style="background:var(--surface);border:1px solid rgba(224,90,90,0.25);border-radius:16px;padding:28px 24px;opacity:0.65">
-        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Algorithmic</div>
-        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#f0a0a0">A failed experiment</div>
-        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">No collateral backing. Relies entirely on market confidence and a paired token to maintain the peg. Catastrophically failed at scale in 2022.</div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star empty"></div><div class="star empty"></div><div class="star empty"></div></div></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--green)">0% (no collateral)</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--red)">Death spiral</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:var(--red);text-decoration:line-through">TerraUST (2022)</span></div>
-        </div>
-        <div style="background:var(--red-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--red)">&#10007; $40B destroyed in May 2022. Largely abandoned by the industry.</div>
-      </div>
+      <!-- ── RIGHT: Stablecoins later (Phase 2) ── -->
+      <div style="background:rgba(14,22,18,0.95);border:1px solid rgba(76,175,130,0.28);border-radius:0 16px 16px 0;padding:22px 20px;border-left:none;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--font-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4caf82;margin-bottom:2px">Phase 2</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:#8de0b8;margin-bottom:8px;line-height:1.1">Stablecoins where<br>they add value</div>
+        <div style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:12px">Stablecoins expand where they solve a <strong style="color:var(--ink);font-weight:500">real plumbing problem</strong> — not as a replacement for cards, but as an upgrade to the back-end and multi-agent layer.</div>
 
+        <div style="display:flex;flex-direction:column;gap:7px;flex:1">
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Faster back-end settlement</div>
+            <div style="font-size:14px;color:var(--ink)">Visa already uses USDC/EURC for issuer &amp; acquirer settlement across blockchains — 24/7, no time-zone lag</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Wallet-native funding</div>
+            <div style="font-size:14px;color:var(--ink)">Mastercard: "wallets to checkouts" — agents hold value on-chain, Mastercard bridges to merchant acceptance</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
+            <div style="font-size:11px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Programmable multi-agent flows</div>
+            <div style="font-size:14px;color:var(--ink)">Sub-agents · conditional release · machine-to-machine · always-on spending rules — money that behaves like software</div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid rgba(76,175,130,0.15);padding-top:10px;font-size:13px;color:#6aba98;font-style:italic">
+          "Coordinate many autonomous agents — program money flows with rules and logic."
+        </div>
+      </div>
     </div>
   </div>
 
@@ -718,14 +1089,14 @@ input[type=range]::-webkit-slider-thumb {
 <div id="nav">
   <button class="nav-btn" id="btn-prev" onclick="navigate(-1)" disabled>←</button>
   <div id="progress-dots"></div>
-  <span id="slide-counter">1 / 5</span>
+  <span id="slide-counter">1 / 8</span>
   <button class="nav-btn" id="btn-next" onclick="navigate(1)">→</button>
 </div>
 
 <div id="fs-hint" onclick="toggleFullscreen()">⛶ Fullscreen</div>
 
 <script>
-  const TOTAL = 5;
+  const TOTAL = 8;
   let current = 1;
 
   function buildDots() {
