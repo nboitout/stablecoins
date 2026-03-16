@@ -136,22 +136,22 @@ html, body {
 #s1 { background: var(--bg); }
 #s1 .big-title {
   font-family: var(--font-d);
-  font-size: clamp(56px, 8vw, 96px);
-  line-height: 1.0;
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.05;
   letter-spacing: -0.02em;
-  max-width: 900px;
+  max-width: 800px;
   align-self: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 #s1 .big-title em { color: var(--gold); font-style: italic; }
 #s1 .sub {
   font-size:25px;
   color: var(--ink-2);
   font-weight: 300;
-  max-width: 600px;
+  max-width: 640px;
   align-self: flex-start;
   line-height: 1.6;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 .pill-row { display: flex; gap: 12px; align-self: flex-start; flex-wrap: wrap; }
 .pill {
@@ -358,10 +358,10 @@ input[type=range]::-webkit-slider-thumb {
 <div id="deck">
 
   <!-- ─────────── SLIDE 1: Title ─────────── -->
-  <div class="slide active" id="s1">
+  <div class="slide active" id="s1" style="justify-content:flex-start;padding-top:72px;">
     <div class="bg-circle" style="width:600px;height:600px;background:radial-gradient(circle,rgba(212,149,58,0.06) 0%,transparent 70%);right:-100px;top:-100px;"></div>
     <div class="slide-label">Payments · Masterclass</div>
-    <div class="big-title">Stablecoins for<br><em>International</em><br>Transfers</div>
+    <div class="big-title">Stablecoins for<br><em>International</em><br>Transfers &amp; Payments</div>
     <div class="sub">A programmable upgrade to slow, expensive legacy rails — why this technology can replace SWIFT for cross-border payments.</div>
     <div class="pill-row">
       <div class="pill">SWIFT vs stablecoins</div>
@@ -656,16 +656,17 @@ input[type=range]::-webkit-slider-thumb {
         <text x="1010" y="218" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
 
         <!-- → Local fiat -->
-        <line x1="1085" y1="208" x2="1135" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
-        <text x="1110" y="202" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
+        <line x1="1085" y1="208" x2="1148" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <rect x="1086" y="192" width="62" height="15" rx="3" fill="#0e0d0b"/>
+        <text x="1117" y="202" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
 
         <!-- Recipient -->
-        <rect x="1000" y="300" width="150" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
-        <text x="1075" y="320" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Recipient</text>
-        <text x="1075" y="334" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
+        <rect x="990" y="300" width="160" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
+        <text x="1070" y="320" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Recipient</text>
+        <text x="1070" y="334" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
 
         <!-- Local fiat → Recipient (L-path) -->
-        <path d="M1140 208 L1155 208 L1155 322 L1150 322" fill="none" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <path d="M1153 208 L1160 208 L1160 322 L1150 322" fill="none" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
 
         <!-- ══════════ TOP SATELLITES ══════════ -->
 
@@ -706,9 +707,11 @@ input[type=range]::-webkit-slider-thumb {
         <text x="454" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
         <!-- lines to on-ramp -->
         <path d="M528 318 L570 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="562" y="278" class="al" fill="#d45a7a" text-anchor="end">exchanges fiat</text>
+        <rect x="422" y="264" width="96" height="16" rx="3" fill="#0e0d0b"/>
+        <text x="470" y="275" class="al" fill="#d45a7a" text-anchor="middle">exchanges fiat</text>
         <path d="M528 362 L570 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="558" y="316" class="al" fill="#d45a7a" text-anchor="end">mints</text>
+        <rect x="497" y="300" width="40" height="16" rx="3" fill="#0e0d0b"/>
+        <text x="517" y="311" class="al" fill="#d45a7a" text-anchor="middle">mints</text>
 
         <!-- Travel Rule -->
         <rect x="285" y="300" width="80" height="60" rx="8" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
@@ -716,7 +719,8 @@ input[type=range]::-webkit-slider-thumb {
         <text x="325" y="336" class="ns" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Rule</text>
         <text x="325" y="350" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
         <path d="M365 330 L445 230" fill="none" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="396" y="296" class="al" fill="#5a8cd0" text-anchor="middle">reporting</text>
+        <rect x="347" y="282" width="74" height="16" rx="3" fill="#0e0d0b"/>
+        <text x="384" y="293" class="al" fill="#5a8cd0" text-anchor="middle">reporting</text>
 
         <!-- Crypto exchange + issuer (off-ramp) -->
         <rect x="840" y="300" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
@@ -725,9 +729,11 @@ input[type=range]::-webkit-slider-thumb {
         <text x="914" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
         <!-- lines to off-ramp -->
         <path d="M988 318 L1010 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="1006" y="278" class="al" fill="#d45a7a">exchanges</text>
+        <rect x="920" y="264" width="76" height="16" rx="3" fill="#0e0d0b"/>
+        <text x="958" y="275" class="al" fill="#d45a7a" text-anchor="middle">exchanges</text>
         <path d="M988 362 L1010 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="1006" y="316" class="al" fill="#d45a7a">burns</text>
+        <rect x="930" y="306" width="46" height="16" rx="3" fill="#0e0d0b"/>
+        <text x="953" y="317" class="al" fill="#d45a7a" text-anchor="middle">burns</text>
 
         <!-- ══════════ LEGEND ══════════ -->
         <rect x="20" y="392" width="500" height="20" rx="4" fill="rgba(14,13,11,0.75)"/>
@@ -905,53 +911,65 @@ input[type=range]::-webkit-slider-thumb {
         </div>
       </div>
 
-      <!-- RIGHT: trilemma + user sorting -->
+      <!-- RIGHT: The multiple rails reality -->
       <div style="display:flex;flex-direction:column;gap:14px">
 
-        <!-- Scalability trilemma -->
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px">
-          <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:16px">Vitalik Buterin's scalability trilemma</div>
-          <svg width="100%" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <style>.tl{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:500}.ts{font-family:"DM Mono",monospace;font-size:13px;text-transform:uppercase;letter-spacing:.08em}</style>
-            </defs>
-            <!-- Triangle -->
-            <polygon points="140,18 260,158 20,158" fill="none" stroke="rgba(240,237,230,0.15)" stroke-width="1.5" stroke-dasharray="5 4"/>
-            <!-- Vertices -->
-            <circle cx="140" cy="18"  r="28" fill="rgba(90,140,200,0.12)" stroke="#5a8cd0" stroke-width="1"/>
-            <text x="140" y="13"  class="ts" fill="#5a8cd0" text-anchor="middle">Decentralised</text>
-            <text x="140" y="25"  class="ts" fill="#6a90c0" text-anchor="middle">✓ crypto</text>
-            <circle cx="260" cy="158" r="28" fill="rgba(76,175,130,0.12)" stroke="#4caf82" stroke-width="1"/>
-            <text x="260" y="154" class="ts" fill="#4caf82" text-anchor="middle">Secure</text>
-            <text x="260" y="166" class="ts" fill="#4a9a72" text-anchor="middle">✓ costly</text>
-            <circle cx="20"  cy="158" r="28" fill="rgba(212,149,58,0.12)" stroke="#d4953a" stroke-width="1"/>
-            <text x="20"  y="154" class="ts" fill="#d4953a" text-anchor="middle">Scalable</text>
-            <text x="20"  y="166" class="ts" fill="#c0853a" text-anchor="middle">✗ tradeoff</text>
-            <!-- Centre label -->
-            <text x="140" y="100" class="tl" fill="rgba(224,90,90,0.9)" text-anchor="middle">Pick only 2</text>
-            <text x="140" y="115" style="font-family:'DM Mono',monospace;font-size:13px" fill="var(--ink-3)" text-anchor="middle">impossible to have all three</text>
-          </svg>
+        <!-- What "multiple rails" actually means -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px">
+          <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px">What "multiple rails" actually means</div>
+          <div style="font-size:15px;color:var(--ink-2);line-height:1.65;margin-bottom:16px">One stablecoin issuer (e.g. Circle) publishes USDC on <strong style="color:var(--ink)">125 different blockchains</strong>. Each version is technically a <em>different token</em> — they do not automatically move between chains.</div>
+
+          <!-- visual: one coin → many non-fungible copies -->
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+            <!-- Source coin -->
+            <div style="background:rgba(212,149,58,0.12);border:1px solid rgba(212,149,58,0.4);border-radius:10px;padding:10px 14px;text-align:center;flex-shrink:0">
+              <div style="font-family:var(--font-d);font-size:20px;color:var(--gold)">USDC</div>
+              <div style="font-family:var(--font-m);font-size:12px;color:var(--ink-3);margin-top:2px">issuer</div>
+            </div>
+            <div style="font-size:22px;color:var(--ink-3)">→</div>
+            <!-- Chain copies -->
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <div style="background:rgba(90,140,200,0.08);border:1px solid rgba(90,140,200,0.2);border-radius:7px;padding:6px 10px;font-size:13px;color:#a8c8e8;font-family:var(--font-m)">Ethereum</div>
+                <div style="font-size:16px;color:var(--red);font-weight:500;display:flex;align-items:center">≠</div>
+                <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.2);border-radius:7px;padding:6px 10px;font-size:13px;color:#8de0b8;font-family:var(--font-m)">Solana</div>
+                <div style="font-size:16px;color:var(--red);font-weight:500;display:flex;align-items:center">≠</div>
+                <div style="background:rgba(140,100,220,0.08);border:1px solid rgba(140,100,220,0.2);border-radius:7px;padding:6px 10px;font-size:13px;color:#c8b0f0;font-family:var(--font-m)">Tron</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <div style="background:rgba(212,149,58,0.08);border:1px solid rgba(212,149,58,0.2);border-radius:7px;padding:6px 10px;font-size:13px;color:#d4953a;font-family:var(--font-m)">Base</div>
+                <div style="font-size:16px;color:var(--red);font-weight:500;display:flex;align-items:center">≠</div>
+                <div style="background:rgba(90,140,200,0.08);border:1px solid rgba(90,140,200,0.2);border-radius:7px;padding:6px 10px;font-size:13px;color:#a8c8e8;font-family:var(--font-m)">Polygon</div>
+                <div style="font-size:16px;color:var(--red);font-weight:500;display:flex;align-items:center">≠</div>
+                <div style="background:rgba(76,175,130,0.06);border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:13px;color:var(--ink-3);font-family:var(--font-m)">+ 120 more</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:rgba(224,90,90,0.08);border-radius:8px;padding:10px 12px;font-size:14px;color:#f0a0a0">
+            These are <strong style="color:var(--red)">non-fungible</strong> tokens — they look identical but cannot be spent interchangeably. Moving between chains requires a <em>bridge</em>, which adds delay, cost, and risk.
+          </div>
         </div>
 
-        <!-- User sorting -->
+        <!-- Why bridges don't solve it -->
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px">
-          <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);margin-bottom:14px">How congestion splits users</div>
+          <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);margin-bottom:12px">Why bridges don't solve it</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <div style="padding:12px;border:1px solid rgba(212,149,58,0.2);border-radius:8px;background:rgba(212,149,58,0.05)">
-              <div style="font-size:14px;font-weight:500;color:var(--amber);margin-bottom:4px">Price-sensitive</div>
-              <div style="font-size:14px;color:var(--ink-3);line-height:1.4">Flee to cheap chains → more fragmentation</div>
+            <div style="padding:10px 12px;border:1px solid rgba(212,149,58,0.15);border-radius:8px;background:rgba(212,149,58,0.04)">
+              <div style="font-size:14px;font-weight:500;color:var(--amber);margin-bottom:4px">Time &amp; cost</div>
+              <div style="font-size:13px;color:var(--ink-3)">Minutes to hours. Fees on top. No 24/7 guarantee.</div>
             </div>
-            <div style="padding:12px;border:1px solid rgba(90,140,200,0.2);border-radius:8px;background:rgba(90,140,200,0.05)">
-              <div style="font-size:14px;font-weight:500;color:#5a8cd0;margin-bottom:4px">Security-sensitive</div>
-              <div style="font-size:14px;color:var(--ink-3);line-height:1.4">Stay on expensive chains → pay the rent</div>
+            <div style="padding:10px 12px;border:1px solid rgba(224,90,90,0.15);border-radius:8px;background:rgba(224,90,90,0.04)">
+              <div style="font-size:14px;font-weight:500;color:var(--red);margin-bottom:4px">$2.5B in hacks</div>
+              <div style="font-size:13px;color:var(--ink-3)">Bridge exploits 2021–2024. Security risk is structural.</div>
             </div>
           </div>
         </div>
 
         <!-- Pull quote -->
-        <div style="border:1px solid rgba(224,90,90,0.2);border-radius:14px;padding:20px;background:rgba(224,90,90,0.04)">
-          <div style="font-family:var(--font-d);font-size:15px;font-style:italic;color:#f0b0b0;line-height:1.6;margin-bottom:10px">"Stable in price, fractured in settlement."</div>
-          <div style="font-family:var(--font-m);font-size:14px;color:var(--ink-3)">FT Alphaville · BIS Working Paper 1335 · March 2026</div>
+        <div style="border:1px solid rgba(224,90,90,0.2);border-radius:14px;padding:18px;background:rgba(224,90,90,0.04)">
+          <div style="font-family:var(--font-d);font-size:17px;font-style:italic;color:#f0b0b0;line-height:1.55;margin-bottom:8px">"Stable in price, fractured in settlement."</div>
+          <div style="font-size:14px;color:var(--ink-3)">The BIS conclusion: stablecoin fragmentation is not a bug to be fixed — it is a structural consequence of how blockchains are designed.</div>
+          <div style="font-family:var(--font-m);font-size:13px;color:var(--ink-3);margin-top:8px;opacity:.7">FT Alphaville · BIS Working Paper 1335 · March 2026</div>
         </div>
 
       </div>
