@@ -54,7 +54,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 64px 80px;
+  padding: 48px 80px 110px;
   opacity: 0;
   transform: translateX(60px);
   transition: opacity .4s ease, transform .4s ease;
@@ -365,7 +365,7 @@ input[type=range]::-webkit-slider-thumb {
     <div class="pill-row">
       <div class="pill">3 mechanisms</div>
       <div class="pill">Interactive</div>
-      <div class="pill">9 slides</div>
+      <div class="pill">5 slides</div>
     </div>
     <div class="s1-line"></div>
     <div class="s1-num">01</div>
@@ -441,67 +441,184 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
 
-  <!-- ─────────── SLIDE 2: Core Problem ─────────── -->
-  <div class="slide" id="s3">
-    <div class="bg-circle" style="width:500px;height:500px;background:radial-gradient(circle,rgba(212,149,58,0.05) 0%,transparent 70%);left:-150px;bottom:-150px;"></div>
-    <div class="slide-label">The challenge</div>
-    <div class="two-col">
-      <div>
-        <div class="h2">Crypto is volatile.<br>Finance needs<br><em style="color:var(--gold);font-style:italic">stability.</em></div>
-        <div class="body-lg">Bitcoin can swing <strong>10% in a single day</strong>. Yet payments, lending, and savings require predictable value. Stablecoins engineer a continuous correction mechanism to hold the price at exactly <strong>$1.00</strong>.</div>
-      </div>
-      <div class="stat-stack">
-        <div class="stat-card">
-          <div class="stat-val">±10%</div>
-          <div class="stat-label">Typical daily Bitcoin volatility</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">$1.00</div>
-          <div class="stat-label">Target price — every stablecoin</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">$180B+</div>
-          <div class="stat-label">Stablecoin market cap in 2024</div>
-        </div>
-      </div>
+  <!-- ─────────── SLIDE 3: Transaction Flow ─────────── -->
+  <div class="slide" id="s3" style="padding:36px 56px 110px;">
+    <div class="slide-label" style="align-self:flex-start">Transaction flow</div>
+    <div style="font-family:var(--font-d);font-size:clamp(18px,2.2vw,28px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
+      The stablecoin sandwich: fiat <em style="color:var(--gold);font-style:italic">&#8594; stablecoin &#8594;</em> fiat
+    </div>
+    <div style="font-size:13px;color:var(--ink-3);align-self:flex-start;margin-bottom:10px;font-family:var(--font-m);flex-shrink:0">
+      Providers involved in a typical cross-border stablecoin transaction
+    </div>
+    <div style="flex:1;width:100%;min-height:0;overflow:hidden">
+      <svg width="100%" height="100%" viewBox="0 0 1160 420" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <style>
+            .nt{font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500}
+            .ns{font-family:"DM Sans",sans-serif;font-size:11px}
+            .al{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+          </style>
+        </defs>
+
+        <!-- ── Phase bands (vertical columns) ── -->
+        <rect x="0"   y="0" width="270" height="420" fill="rgba(90,140,200,0.05)"/>
+        <rect x="270" y="0" width="300" height="420" fill="rgba(140,100,220,0.06)"/>
+        <rect x="570" y="0" width="300" height="420" fill="rgba(140,100,220,0.06)"/>
+        <rect x="870" y="0" width="290" height="420" fill="rgba(90,140,200,0.05)"/>
+
+        <!-- Phase dividers -->
+        <line x1="270" y1="10" x2="270" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="570" y1="10" x2="570" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="870" y1="10" x2="870" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+
+        <!-- Phase headers -->
+        <text x="135" y="22" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-in</text>
+        <text x="420" y="22" class="al" fill="#8a6ad4" text-anchor="middle">On-ramp</text>
+        <text x="720" y="22" class="al" fill="#8a6ad4" text-anchor="middle">On-chain + off-ramp</text>
+        <text x="1015" y="22" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-out</text>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- HORIZONTAL SPINE: Sender → … → Recipient  -->
+        <!-- ══════════════════════════════════════════ -->
+
+        <!-- Sender -->
+        <rect x="20" y="190" width="150" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
+        <text x="95" y="212" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Sender</text>
+        <text x="95" y="226" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
+
+        <!-- → Fiat payment provider -->
+        <line x1="170" y1="212" x2="285" y2="212" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <text x="227" y="206" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
+
+        <!-- Fiat payment provider -->
+        <rect x="285" y="182" width="160" height="52" rx="8" fill="#161c28" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="365" y="202" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Fiat payment</text>
+        <text x="365" y="218" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+
+        <!-- → On-ramp -->
+        <line x1="445" y1="208" x2="495" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+
+        <!-- On-ramp provider -->
+        <rect x="495" y="182" width="150" height="52" rx="8" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="570" y="202" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-ramp</text>
+        <text x="570" y="218" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
+
+        <!-- → stablecoin spine (dashed gold) -->
+        <line x1="645" y1="208" x2="715" y2="208" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
+        <rect x="648" y="196" width="64" height="15" rx="3" fill="#0e0d0b"/>
+        <text x="680" y="207" class="al" fill="#d4953a" text-anchor="middle">stablecoin</text>
+
+        <!-- On-chain settlement box -->
+        <rect x="715" y="168" width="170" height="80" rx="8" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
+        <text x="800" y="196" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-chain</text>
+        <text x="800" y="212" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">orchestration</text>
+        <text x="800" y="228" class="ns" fill="#6a50a8" text-anchor="middle" dominant-baseline="central">+ blockchain network</text>
+
+        <!-- → Off-ramp (dashed gold) -->
+        <line x1="885" y1="208" x2="935" y2="208" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
+
+        <!-- Off-ramp provider -->
+        <rect x="935" y="182" width="150" height="52" rx="8" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="1010" y="202" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
+        <text x="1010" y="218" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
+
+        <!-- → Local fiat -->
+        <line x1="1085" y1="208" x2="1135" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <text x="1110" y="202" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
+
+        <!-- Recipient -->
+        <rect x="1000" y="300" width="150" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
+        <text x="1075" y="320" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Recipient</text>
+        <text x="1075" y="334" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
+
+        <!-- Local fiat → Recipient (L-path) -->
+        <path d="M1140 208 L1155 208 L1155 322 L1150 322" fill="none" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+
+        <!-- ══════════ TOP SATELLITES ══════════ -->
+
+        <!-- KYC/KYB -->
+        <rect x="285" y="60" width="160" height="44" rx="8" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="365" y="78" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">KYC / KYB</text>
+        <text x="365" y="92" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <line x1="365" y1="104" x2="365" y2="182" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="373" y="148" class="al" fill="#5a8cd0">compliance</text>
+
+        <!-- On-ramp liquidity -->
+        <rect x="495" y="60" width="150" height="44" rx="8" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
+        <text x="570" y="78" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">On-ramp</text>
+        <text x="570" y="92" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
+        <line x1="570" y1="104" x2="570" y2="182" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text x="578" y="148" class="al" fill="#4caf82">bridges gaps</text>
+
+        <!-- Wallet/custody -->
+        <rect x="715" y="60" width="170" height="44" rx="8" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
+        <text x="800" y="78" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Wallet / custody</text>
+        <text x="800" y="92" class="ns" fill="#7a60c0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <line x1="800" y1="104" x2="800" y2="168" stroke="#8a6ad4" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="808" y="140" class="al" fill="#8a6ad4">safe custody</text>
+
+        <!-- Off-ramp liquidity -->
+        <rect x="935" y="60" width="150" height="44" rx="8" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
+        <text x="1010" y="78" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
+        <text x="1010" y="92" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
+        <line x1="1010" y1="104" x2="1010" y2="182" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text x="1018" y="148" class="al" fill="#4caf82">bridges gaps</text>
+
+        <!-- ══════════ BOTTOM SATELLITES ══════════ -->
+
+        <!-- Crypto exchange + issuer (on-ramp) -->
+        <rect x="380" y="300" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="454" y="322" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
+        <rect x="380" y="344" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="454" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
+        <!-- lines to on-ramp -->
+        <path d="M528 318 L570 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="562" y="278" class="al" fill="#d45a7a" text-anchor="end">exchanges fiat</text>
+        <path d="M528 362 L570 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="558" y="316" class="al" fill="#d45a7a" text-anchor="end">mints</text>
+
+        <!-- Travel Rule -->
+        <rect x="285" y="300" width="80" height="60" rx="8" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="325" y="320" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Travel</text>
+        <text x="325" y="336" class="ns" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Rule</text>
+        <text x="325" y="350" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <path d="M365 330 L445 230" fill="none" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="396" y="296" class="al" fill="#5a8cd0" text-anchor="middle">reporting</text>
+
+        <!-- Crypto exchange + issuer (off-ramp) -->
+        <rect x="840" y="300" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="914" y="322" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
+        <rect x="840" y="344" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="914" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
+        <!-- lines to off-ramp -->
+        <path d="M988 318 L1010 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="1006" y="278" class="al" fill="#d45a7a">exchanges</text>
+        <path d="M988 362 L1010 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="1006" y="316" class="al" fill="#d45a7a">burns</text>
+
+        <!-- ══════════ LEGEND ══════════ -->
+        <rect x="20" y="392" width="500" height="20" rx="4" fill="rgba(14,13,11,0.75)"/>
+        <circle cx="36"  cy="402" r="5" fill="none" stroke="#5a8cd0" stroke-width="1.5"/>
+        <text x="46"  y="406" class="al" fill="#5a8cd0">Compliance/KYC</text>
+        <circle cx="168" cy="402" r="5" fill="none" stroke="#d45a7a" stroke-width="1.5"/>
+        <text x="178" y="406" class="al" fill="#d45a7a">Issuers/Exchanges</text>
+        <circle cx="310" cy="402" r="5" fill="none" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="320" y="406" class="al" fill="#8a6ad4">On-chain</text>
+        <circle cx="396" cy="402" r="5" fill="none" stroke="#4caf82" stroke-width="1.5"/>
+        <text x="406" y="406" class="al" fill="#4caf82">Liquidity</text>
+      </svg>
     </div>
   </div>
 
-  <!-- ─────────── SLIDE 3: Arbitrage ─────────── -->
-  <div class="slide" id="s4">
-    <div class="slide-label">The engine</div>
-    <div class="content">
-      <div class="h2" style="margin-bottom:12px">The arbitrage mechanism</div>
-      <div class="arb-flow">
-        <div class="arb-node">
-          <div class="arb-val" style="color:var(--red)">$0.97</div>
-          <div class="arb-sublabel">Token dips</div>
-        </div>
-        <div class="arb-sep">→</div>
-        <div class="arb-node">
-          <div class="arb-val">Buy cheap</div>
-          <div class="arb-sublabel">on exchange</div>
-          <div class="arb-tag" style="background:var(--gold-dim);color:var(--gold)">pay $0.97</div>
-        </div>
-        <div class="arb-sep">→</div>
-        <div class="arb-node">
-          <div class="arb-val">Redeem for</div>
-          <div class="arb-sublabel">$1.00 backing</div>
-          <div class="arb-tag" style="background:var(--green-bg);color:var(--green)">+$0.03 profit</div>
-        </div>
-        <div class="arb-sep">→</div>
-        <div class="arb-node">
-          <div class="arb-val" style="color:var(--green)">$1.00</div>
-          <div class="arb-sublabel">Peg restored</div>
-        </div>
-      </div>
-      <div class="caption">Traders hunt price gaps constantly. As long as <strong>redemption is guaranteed</strong>, any deviation from $1 triggers instant arbitrage — and the arbitrage itself closes the gap. The mechanism only fails if the redemption promise breaks.</div>
-    </div>
-  </div>
+
+
 
   <!-- ─────────── SLIDE 4: Fiat-backed ─────────── -->
-  <div class="slide" id="s5">
-    <div class="slide-label">Mechanism 1 of 3</div>
+  <div class="slide" id="s4">
+    <div class="slide-label">How it works</div>
     <div class="mech-layout">
       <div>
         <div class="h2" style="margin-bottom:6px">Fiat-backed</div>
@@ -544,151 +661,55 @@ input[type=range]::-webkit-slider-thumb {
     </div>
   </div>
 
-  <!-- ─────────── SLIDE 5: Crypto-backed ─────────── -->
-  <div class="slide" id="s6">
-    <div class="slide-label">Mechanism 2 of 3</div>
-    <div class="mech-layout">
-      <div>
-        <div class="h2" style="margin-bottom:6px">Crypto-backed</div>
-        <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">Over-collateralized on-chain</div>
-        <div class="flow-steps">
-          <div class="fstep"><div class="fstep-num">01</div><div><div class="fstep-label">Lock $150 of ETH</div><div class="fstep-sub">In a smart contract vault</div></div></div>
-          <div class="fstep"><div class="fstep-num">02</div><div><div class="fstep-label">Receive 100 DAI</div><div class="fstep-sub">67% LTV — never 100%</div></div></div>
-          <div class="fstep"><div class="fstep-num">03</div><div><div class="fstep-label">ETH price is monitored</div><div class="fstep-sub">Oracle feeds update continuously</div></div></div>
-          <div class="fstep"><div class="fstep-num">04</div><div><div class="fstep-label">Below 150% → liquidated</div><div class="fstep-sub">Contract seizes ETH, burns DAI</div></div></div>
-        </div>
-        <div class="examples" style="margin-top:20px">
-          <span class="ex-chip">DAI</span><span class="ex-chip">crvUSD</span><span class="ex-chip">LUSD</span>
-        </div>
-      </div>
-      <div>
-        <div class="sim-wrap">
-          <div class="sim-title-label">Live simulator — collateral ratio</div>
-          <div class="sim-row">
-            <span class="sim-lbl">ETH collateral value</span>
-            <input type="range" min="80" max="300" value="150" id="eth-sl" oninput="updateSim(this.value)">
-            <span class="sim-val" id="eth-out">$150</span>
-          </div>
-          <div class="sim-out" id="sim-out" style="background:var(--green-bg);border:1px solid rgba(76,175,130,.2)">
-            <div class="sim-out-price" id="sim-ratio" style="color:var(--green)">150%</div>
-            <div class="sim-out-sub">collateral ratio (minimum: 150%)</div>
-            <div class="sim-status" id="sim-msg" style="background:rgba(76,175,130,.1);color:#7fd4a8">
-              Position is safe. Your DAI is fully backed with buffer to absorb price swings.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─────────── SLIDE 6: Algorithmic ─────────── -->
-  <div class="slide" id="s7">
-    <div class="slide-label">Mechanism 3 of 3</div>
-    <div style="width:100%;max-width:1000px">
-      <div class="h2" style="margin-bottom:8px">Algorithmic</div>
-      <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">No collateral — pure supply mechanics</div>
-      <div class="algo-grid">
-        <div class="algo-box" style="background:var(--green-bg);border:1px solid rgba(76,175,130,.2)">
-          <div class="algo-box-title" style="color:var(--green)">Price above $1 → expand supply</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(76,175,130,.2);color:var(--green)">1</div>Token trades at $1.02</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(76,175,130,.2);color:var(--green)">2</div>Protocol mints new tokens</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(76,175,130,.2);color:var(--green)">3</div>More supply → price falls to $1</div>
-        </div>
-        <div class="algo-box" style="background:var(--amber-bg);border:1px solid rgba(212,149,58,.2)">
-          <div class="algo-box-title" style="color:var(--gold)">Price below $1 → contract supply</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(212,149,58,.2);color:var(--gold)">1</div>Token trades at $0.98</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(212,149,58,.2);color:var(--gold)">2</div>Users burn tokens for "bonds"</div>
-          <div class="algo-step"><div class="astep-num" style="background:rgba(212,149,58,.2);color:var(--gold)">3</div>Less supply → price rises to $1</div>
-        </div>
-      </div>
-      <div class="danger-banner">
-        <strong>⚠ Critical flaw:</strong> The mechanism relies entirely on market confidence. If confidence breaks, the seigniorage token crashes — the protocol can't incentivize contractions — and both tokens spiral to zero. This is a <strong>death spiral</strong>, and it has happened.
-      </div>
-      <div class="examples">
-        <span class="ex-chip defunct">TerraUST — collapsed May 2022</span>
-        <span class="ex-chip">FRAX (hybrid model)</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─────────── SLIDE 7: Death spiral ─────────── -->
-  <div class="slide" id="s8">
-    <div class="bg-circle" style="width:400px;height:400px;background:radial-gradient(circle,rgba(224,90,90,0.06) 0%,transparent 70%);right:0;top:50%;transform:translateY(-50%);"></div>
-    <div class="slide-label">Case study · May 2022</div>
-    <div style="width:100%;max-width:1000px">
-      <div class="h2" style="margin-bottom:6px;color:var(--red)">The LUNA / TerraUST collapse</div>
-      <div style="font-size:21px;color:var(--ink-3);margin-bottom:28px">$40 billion destroyed in 5 days</div>
-      <div class="spiral-grid">
-        <div class="spiral-card">
-          <div class="spiral-day">Day 1</div>
-          <div class="spiral-title">Large UST withdrawal</div>
-          <div class="spiral-desc">$2B withdrawn from Anchor protocol. UST begins to depeg slightly — $0.98.</div>
-        </div>
-        <div class="spiral-card">
-          <div class="spiral-day">Day 2</div>
-          <div class="spiral-title">Panic accelerates</div>
-          <div class="spiral-desc">UST falls to $0.92. Protocol mints massive amounts of LUNA to restore the peg.</div>
-        </div>
-        <div class="spiral-card danger">
-          <div class="spiral-day">Day 3</div>
-          <div class="spiral-title">LUNA hyperinflation</div>
-          <div class="spiral-desc">Billions of LUNA minted. Supply dilution crashes LUNA price. Confidence evaporates.</div>
-        </div>
-        <div class="spiral-card danger">
-          <div class="spiral-day">Day 5</div>
-          <div class="spiral-title">Total collapse</div>
-          <div class="spiral-desc">UST → $0.01. LUNA → $0.00. $40B in value destroyed. Peg never recovered.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ─────────── SLIDE 8: Comparison ─────────── -->
-  <div class="slide" id="s9">
+  <div class="slide" id="s5">
     <div class="slide-label">Summary</div>
-    <div class="h2" style="align-self:flex-start;margin-bottom:32px;width:100%;max-width:1000px">No perfect stablecoin —<br>only the right trade-off</div>
-    <table class="cmp-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Fiat-backed</th>
-          <th>Crypto-backed</th>
-          <th>Algorithmic</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Peg stability</td>
-          <td><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></td>
-          <td><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star empty"></div></div></td>
-          <td><div class="stars"><div class="star"></div><div class="star"></div><div class="star empty"></div><div class="star empty"></div><div class="star empty"></div></div></td>
-        </tr>
-        <tr>
-          <td>Decentralization</td>
-          <td><span class="cmp-tag" style="background:var(--red-bg);color:var(--red)">Centralized</span></td>
-          <td><span class="cmp-tag" style="background:var(--green-bg);color:var(--green)">High</span></td>
-          <td><span class="cmp-tag" style="background:var(--green-bg);color:var(--green)">Full</span></td>
-        </tr>
-        <tr>
-          <td>Capital efficiency</td>
-          <td><span style="font-size:18px">1:1 ratio</span></td>
-          <td><span style="font-size:18px;color:var(--ink-3)">150%+ needed</span></td>
-          <td><span style="font-size:18px">No collateral</span></td>
-        </tr>
-        <tr>
-          <td>Failure mode</td>
-          <td><span style="font-size:18px;color:var(--ink-2)">Custodian insolvency</span></td>
-          <td><span style="font-size:18px;color:var(--ink-2)">Market crash cascade</span></td>
-          <td><span style="font-size:18px;color:var(--red)">Death spiral</span></td>
-        </tr>
-        <tr>
-          <td>Examples</td>
-          <td><span style="font-size:17px;color:var(--ink-3);font-family:var(--font-m)">USDC, USDT</span></td>
-          <td><span style="font-size:17px;color:var(--ink-3);font-family:var(--font-m)">DAI, LUSD</span></td>
-          <td><span style="font-size:17px;color:var(--ink-3);font-family:var(--font-m);text-decoration:line-through">TerraUST</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="h2" style="align-self:flex-start;margin-bottom:28px;width:100%;max-width:1100px">Three models —<br>one promise</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1100px">
+
+      <!-- Fiat-backed -->
+      <div style="background:var(--surface);border:1px solid rgba(90,140,200,0.3);border-radius:16px;padding:28px 24px">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5a8cd0;margin-bottom:10px">Fiat-backed</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#a8c8e8">The standard</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Each token backed 1:1 by real dollars or short-term government bills held in custody. The dominant model today.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--ink)">1:1</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Custodian</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#5a8cd0">USDC · USDT · PYUSD</span></div>
+        </div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--green)">&#10003; Proven, regulated, audited. Used by banks &amp; institutions.</div>
+      </div>
+
+      <!-- Crypto-backed -->
+      <div style="background:var(--surface);border:1px solid rgba(140,100,220,0.25);border-radius:16px;padding:28px 24px;opacity:0.75">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a6ad4;margin-bottom:10px">Crypto-backed</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#c8b0f0">Closer to a hedge fund</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">Over-collateralised with volatile crypto assets locked in smart contracts. Capital-inefficient — closer to a leveraged DeFi position than a true stable reserve.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star empty"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--amber)">150%+</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--amber)">Liquidation cascade</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:#8a6ad4">DAI · crvUSD · LUSD</span></div>
+        </div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--amber)">&#9888; Niche use-case. Complex risk profile. Not for mainstream finance.</div>
+      </div>
+
+      <!-- Algorithmic -->
+      <div style="background:var(--surface);border:1px solid rgba(224,90,90,0.25);border-radius:16px;padding:28px 24px;opacity:0.65">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Algorithmic</div>
+        <div style="font-family:var(--font-d);font-size:26px;margin-bottom:16px;color:#f0a0a0">A failed experiment</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:20px">No collateral backing. Relies entirely on market confidence and a paired token to maintain the peg. Catastrophically failed at scale in 2022.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Peg stability</span><div class="stars"><div class="star"></div><div class="star"></div><div class="star empty"></div><div class="star empty"></div><div class="star empty"></div></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Capital ratio</span><span style="color:var(--green)">0% (no collateral)</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="color:var(--ink-3)">Risk</span><span style="color:var(--red)">Death spiral</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span style="color:var(--ink-3)">Examples</span><span style="font-family:var(--font-m);font-size:13px;color:var(--red);text-decoration:line-through">TerraUST (2022)</span></div>
+        </div>
+        <div style="background:var(--red-bg);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--red)">&#10007; $40B destroyed in May 2022. Largely abandoned by the industry.</div>
+      </div>
+
+    </div>
   </div>
 
 </div>
@@ -697,14 +718,14 @@ input[type=range]::-webkit-slider-thumb {
 <div id="nav">
   <button class="nav-btn" id="btn-prev" onclick="navigate(-1)" disabled>←</button>
   <div id="progress-dots"></div>
-  <span id="slide-counter">1 / 8</span>
+  <span id="slide-counter">1 / 5</span>
   <button class="nav-btn" id="btn-next" onclick="navigate(1)">→</button>
 </div>
 
 <div id="fs-hint" onclick="toggleFullscreen()">⛶ Fullscreen</div>
 
 <script>
-  const TOTAL = 9;
+  const TOTAL = 5;
   let current = 1;
 
   function buildDots() {
