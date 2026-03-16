@@ -365,14 +365,84 @@ input[type=range]::-webkit-slider-thumb {
     <div class="pill-row">
       <div class="pill">3 mechanisms</div>
       <div class="pill">Interactive</div>
-      <div class="pill">8 slides</div>
+      <div class="pill">9 slides</div>
     </div>
     <div class="s1-line"></div>
     <div class="s1-num">01</div>
   </div>
 
-  <!-- ─────────── SLIDE 2: Core Problem ─────────── -->
+  <!-- ─────────── SLIDE 2: The War ─────────── -->
   <div class="slide" id="s2">
+    <div class="bg-circle" style="width:700px;height:700px;background:radial-gradient(circle,rgba(212,149,58,0.04) 0%,transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);"></div>
+    <div class="slide-label">The big picture</div>
+    <div class="h2" style="align-self:flex-start;margin-bottom:8px">The stablecoin war</div>
+    <div style="font-size:18px;color:var(--ink-3);font-family:var(--font-m);align-self:flex-start;margin-bottom:36px">Banking vs. crypto rails — stablecoins are the contested bridge</div>
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;max-width:1100px;align-items:stretch">
+
+      <!-- LEFT: Traditional Banking -->
+      <div style="background:rgba(26,24,20,0.9);border:1px solid rgba(240,237,230,0.12);border-radius:16px 0 0 16px;padding:32px 28px;border-right:none">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#7bafd4;margin-bottom:6px">Traditional banking</div>
+        <div style="font-family:var(--font-d);font-size:27px;margin-bottom:20px;color:#a8c8e8">The legacy engine</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:24px">Controlled via regulated deposits, lending, and central oversight to maintain monetary stability.</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="background:rgba(100,160,220,0.08);border:1px solid rgba(100,160,220,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#a8c8e8;margin-bottom:4px">Deposits vs. Digital Dollars</div>
+            <div style="font-size:13px;color:var(--ink-3)">Physical reserves vs. on-chain tokens</div>
+          </div>
+          <div style="background:rgba(100,160,220,0.08);border:1px solid rgba(100,160,220,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#a8c8e8;margin-bottom:4px">Lending vs. Full Reserve</div>
+            <div style="font-size:13px;color:var(--ink-3)">Fractional lending vs. 1:1 backing</div>
+          </div>
+          <div style="background:rgba(100,160,220,0.08);border:1px solid rgba(100,160,220,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#a8c8e8;margin-bottom:4px">Regulated Intermediation</div>
+            <div style="font-size:13px;color:var(--ink-3)">KYC, compliance, gated access</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;font-family:var(--font-m);font-size:12px;color:#5a8ab0;letter-spacing:.06em">Closed, regulated money</div>
+      </div>
+
+      <!-- CENTER: Bridge -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:0 28px;min-width:180px">
+        <div style="font-family:var(--font-d);font-size:15px;color:var(--ink-3);margin-bottom:16px;text-align:center;font-style:italic">the bridge</div>
+        <div style="width:2px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold));margin-bottom:0"></div>
+        <div style="background:var(--gold-dim);border:1px solid rgba(212,149,58,0.35);border-radius:12px;padding:16px 20px;text-align:center;margin:0">
+          <div style="font-family:var(--font-d);font-size:22px;color:var(--gold);line-height:1.2">Stable<br>coins</div>
+        </div>
+        <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);margin-top:0"></div>
+        <div style="font-size:13px;color:var(--ink-3);text-align:center;line-height:1.6;max-width:140px;margin-top:16px">Interface between bank money and digital markets</div>
+      </div>
+
+      <!-- RIGHT: Crypto World -->
+      <div style="background:rgba(20,26,20,0.9);border:1px solid rgba(240,237,230,0.12);border-radius:0 16px 16px 0;padding:32px 28px;border-left:none">
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#4caf82;margin-bottom:6px">Crypto world</div>
+        <div style="font-family:var(--font-d);font-size:27px;margin-bottom:20px;color:#8de0b8">The programmable future</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:24px">Built on open, 24/7 networks that prioritize instant settlement and borderless, self-custodied assets.</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#8de0b8;margin-bottom:4px">Permissionless Access</div>
+            <div style="font-size:13px;color:var(--ink-3)">Anyone, anywhere, no intermediary</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#8de0b8;margin-bottom:4px">Business Protection vs. Innovation</div>
+            <div style="font-size:13px;color:var(--ink-3)">Incumbents vs. open protocols</div>
+          </div>
+          <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.18);border-radius:10px;padding:14px 16px">
+            <div style="font-size:14px;font-weight:500;color:#8de0b8;margin-bottom:4px">24/7 Programmable Settlement</div>
+            <div style="font-size:13px;color:var(--ink-3)">Instant, borderless, self-custody</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;font-family:var(--font-m);font-size:12px;color:#3a8a60;letter-spacing:.06em">Open, programmable money</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;font-size:15px;color:var(--ink-3);text-align:center;max-width:700px;font-style:italic">
+      This conflict determines who manages the future of yield, settlement, and the "rails" of global finance.
+    </div>
+  </div>
+
+
+  <!-- ─────────── SLIDE 2: Core Problem ─────────── -->
+  <div class="slide" id="s3">
     <div class="bg-circle" style="width:500px;height:500px;background:radial-gradient(circle,rgba(212,149,58,0.05) 0%,transparent 70%);left:-150px;bottom:-150px;"></div>
     <div class="slide-label">The challenge</div>
     <div class="two-col">
@@ -398,7 +468,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 3: Arbitrage ─────────── -->
-  <div class="slide" id="s3">
+  <div class="slide" id="s4">
     <div class="slide-label">The engine</div>
     <div class="content">
       <div class="h2" style="margin-bottom:12px">The arbitrage mechanism</div>
@@ -430,7 +500,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 4: Fiat-backed ─────────── -->
-  <div class="slide" id="s4">
+  <div class="slide" id="s5">
     <div class="slide-label">Mechanism 1 of 3</div>
     <div class="mech-layout">
       <div>
@@ -475,7 +545,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 5: Crypto-backed ─────────── -->
-  <div class="slide" id="s5">
+  <div class="slide" id="s6">
     <div class="slide-label">Mechanism 2 of 3</div>
     <div class="mech-layout">
       <div>
@@ -512,7 +582,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 6: Algorithmic ─────────── -->
-  <div class="slide" id="s6">
+  <div class="slide" id="s7">
     <div class="slide-label">Mechanism 3 of 3</div>
     <div style="width:100%;max-width:1000px">
       <div class="h2" style="margin-bottom:8px">Algorithmic</div>
@@ -542,7 +612,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 7: Death spiral ─────────── -->
-  <div class="slide" id="s7">
+  <div class="slide" id="s8">
     <div class="bg-circle" style="width:400px;height:400px;background:radial-gradient(circle,rgba(224,90,90,0.06) 0%,transparent 70%);right:0;top:50%;transform:translateY(-50%);"></div>
     <div class="slide-label">Case study · May 2022</div>
     <div style="width:100%;max-width:1000px">
@@ -574,7 +644,7 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <!-- ─────────── SLIDE 8: Comparison ─────────── -->
-  <div class="slide" id="s8">
+  <div class="slide" id="s9">
     <div class="slide-label">Summary</div>
     <div class="h2" style="align-self:flex-start;margin-bottom:32px;width:100%;max-width:1000px">No perfect stablecoin —<br>only the right trade-off</div>
     <table class="cmp-table">
@@ -634,7 +704,7 @@ input[type=range]::-webkit-slider-thumb {
 <div id="fs-hint" onclick="toggleFullscreen()">⛶ Fullscreen</div>
 
 <script>
-  const TOTAL = 8;
+  const TOTAL = 9;
   let current = 1;
 
   function buildDots() {
