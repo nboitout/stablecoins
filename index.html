@@ -358,27 +358,37 @@ input[type=range]::-webkit-slider-thumb {
 <div id="deck">
 
   <!-- ─────────── SLIDE 1: Title ─────────── -->
-  <div class="slide active" id="s1" style="justify-content:flex-start;padding-top:72px;">
+  <div class="slide active" id="s1" style="justify-content:flex-start;padding-top:52px;">
     <div class="bg-circle" style="width:600px;height:600px;background:radial-gradient(circle,rgba(212,149,58,0.06) 0%,transparent 70%);right:-100px;top:-100px;"></div>
-    <div class="slide-label">Payments · Masterclass</div>
-    <div class="big-title">Stablecoins for<br><em>International</em><br>Transfers &amp; Payments</div>
-    <div class="sub">A programmable upgrade to slow, expensive legacy rails — why this technology can replace SWIFT for cross-border payments.</div>
-    <div class="pill-row">
-      <div class="pill">SWIFT vs stablecoins</div>
-      <div class="pill">8 slides</div>
+
+    <!-- Course credit -->
+    <div style="align-self:flex-start;margin-bottom:18px;display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">Master II Finance 2026</div>
+      <div style="font-family:var(--font-m);font-size:13px;color:var(--ink-3);letter-spacing:.06em">Finance Digitale &nbsp;·&nbsp; Nicolas Boitout</div>
     </div>
-    <div style="display:flex;gap:20px;align-self:flex-start;margin-top:16px;flex-wrap:wrap">
-      <div style="background:rgba(224,90,90,0.08);border:1px solid rgba(224,90,90,0.2);border-radius:10px;padding:12px 18px">
-        <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px">SWIFT today</div>
-        <div style="font-size:15px;font-weight:500;color:var(--ink)">1–5 days &nbsp;·&nbsp; $25–50/tx &nbsp;·&nbsp; 6% avg cost</div>
-        <div style="font-size:14px;color:var(--ink-3);margin-top:3px">Opaque fees · correspondent banking chains · banker hours only</div>
+
+    <div class="big-title">Stablecoins for <em>International</em><br>Transfers &amp; Payments?</div>
+    <!-- Big question boxes side by side -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-self:flex-start;width:100%;max-width:980px;margin-bottom:24px">
+
+      <!-- Q1: SWIFT -->
+      <div style="background:rgba(224,90,90,0.07);border:1.5px solid rgba(224,90,90,0.3);border-radius:14px;padding:24px 28px;border-left:5px solid var(--red);">
+        <div style="font-family:var(--font-m);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:14px;font-weight:500">① What is SWIFT today?</div>
+        <div style="font-family:var(--font-d);font-size:28px;color:var(--ink);line-height:1.15;margin-bottom:10px;white-space:nowrap">1–5 days &nbsp;·&nbsp; $25–50/tx &nbsp;·&nbsp; 6% avg cost</div>
+        <div style="width:40px;height:2px;background:rgba(224,90,90,0.4);margin-bottom:14px;border-radius:1px"></div>
+        <div style="font-size:17px;color:var(--ink-2);line-height:1.6">Opaque fees &nbsp;·&nbsp; correspondent chains<br>banker hours &nbsp;·&nbsp; no programmability</div>
       </div>
-      <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.2);border-radius:10px;padding:12px 18px">
-        <div style="font-family:var(--font-m);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:6px">Stablecoins</div>
-        <div style="font-size:15px;font-weight:500;color:var(--ink)">&lt;1 min &nbsp;·&nbsp; cents/tx &nbsp;·&nbsp; 24/7/365</div>
-        <div style="font-size:14px;color:var(--ink-3);margin-top:3px">Transparent · programmable · borderless · no intermediary</div>
+
+      <!-- Q2: Stablecoins -->
+      <div style="background:rgba(76,175,130,0.07);border:1.5px solid rgba(76,175,130,0.3);border-radius:14px;padding:24px 28px;border-left:5px solid var(--green);">
+        <div style="font-family:var(--font-m);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:14px;font-weight:500">② What are stablecoins promising?</div>
+        <div style="font-family:var(--font-d);font-size:28px;color:var(--ink);line-height:1.15;margin-bottom:10px;white-space:nowrap">&lt;1 min &nbsp;·&nbsp; cents/tx &nbsp;·&nbsp; 24/7/365</div>
+        <div style="width:40px;height:2px;background:rgba(76,175,130,0.4);margin-bottom:14px;border-radius:1px"></div>
+        <div style="font-size:17px;color:var(--ink-2);line-height:1.6">Transparent &nbsp;·&nbsp; programmable<br>borderless &nbsp;·&nbsp; no intermediary</div>
       </div>
+
     </div>
+
     <div class="s1-line"></div>
     <div class="s1-num">01</div>
   </div>
@@ -387,8 +397,7 @@ input[type=range]::-webkit-slider-thumb {
   <div class="slide" id="s2">
     <div class="bg-circle" style="width:700px;height:700px;background:radial-gradient(circle,rgba(212,149,58,0.04) 0%,transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);"></div>
     <div class="slide-label">The big picture</div>
-    <div class="h2" style="align-self:flex-start;margin-bottom:6px">Two worlds — one <em style="color:var(--gold);font-style:italic">bridge</em></div>
-    <div style="font-size:16px;color:var(--ink-3);font-family:var(--font-m);align-self:flex-start;margin-bottom:20px">Stablecoins were built to connect the legacy banking system to the on-chain world</div>
+    <div class="h2" style="align-self:flex-start;margin-bottom:20px">Stablecoins emerged to <em style="color:var(--gold);font-style:italic">bridge</em><br>two worlds that could not talk to each other</div>
     <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;max-width:1100px;align-items:stretch">
 
       <!-- LEFT: Traditional Banking -->
@@ -413,45 +422,45 @@ input[type=range]::-webkit-slider-thumb {
         <div style="margin-top:20px;font-family:var(--font-m);font-size:14px;color:#5a8ab0;letter-spacing:.06em">Closed, regulated money</div>
       </div>
 
-      <!-- CENTER: Bridge visual -->
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:0 12px;min-width:210px">
-        <svg width="180" height="150" viewBox="0 0 180 150" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+      <!-- CENTER: Bridge visual (LARGE) -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:0 8px;min-width:330px;">
+        <svg width="310" height="290" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
           <defs>
             <marker id="ba1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#5a8cd0" stroke-width="2" stroke-linecap="round"/></marker>
             <marker id="ba2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#4caf82" stroke-width="2" stroke-linecap="round"/></marker>
           </defs>
           <!-- road deck -->
-          <rect x="0" y="72" width="180" height="12" rx="2" fill="rgba(212,149,58,0.15)" stroke="rgba(212,149,58,0.35)" stroke-width="0.5"/>
+          <rect x="0" y="102" width="180" height="12" rx="2" fill="rgba(212,149,58,0.15)" stroke="rgba(212,149,58,0.35)" stroke-width="0.5"/>
           <!-- main arch -->
-          <path d="M8 84 Q90 14 172 84" fill="none" stroke="#d4953a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M8 114 Q90 44 172 114" fill="none" stroke="#d4953a" stroke-width="3" stroke-linecap="round"/>
           <!-- suspender cables -->
-          <line x1="90" y1="16" x2="68" y2="72" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
-          <line x1="90" y1="16" x2="112" y2="72" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
-          <line x1="90" y1="16" x2="46" y2="72" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
-          <line x1="90" y1="16" x2="134" y2="72" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
-          <line x1="90" y1="16" x2="26" y2="72" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
-          <line x1="90" y1="16" x2="154" y2="72" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
+          <line x1="90" y1="46" x2="68" y2="102" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
+          <line x1="90" y1="46" x2="112" y2="102" stroke="rgba(212,149,58,0.5)" stroke-width="1.2"/>
+          <line x1="90" y1="46" x2="46" y2="102" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
+          <line x1="90" y1="46" x2="134" y2="102" stroke="rgba(212,149,58,0.35)" stroke-width="0.9"/>
+          <line x1="90" y1="46" x2="26" y2="102" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
+          <line x1="90" y1="46" x2="154" y2="102" stroke="rgba(212,149,58,0.2)" stroke-width="0.7"/>
           <!-- traffic arrows on deck -->
-          <line x1="10" y1="78" x2="76" y2="78" stroke="#5a8cd0" stroke-width="2" marker-end="url(#ba1)"/>
-          <line x1="170" y1="78" x2="104" y2="78" stroke="#4caf82" stroke-width="2" marker-end="url(#ba2)"/>
-          <!-- peak medallion -->
-          <circle cx="90" cy="16" r="18" fill="rgba(212,149,58,0.12)" stroke="#d4953a" stroke-width="1.5"/>
-          <text x="90" y="12" font-family="Playfair Display,serif" font-size="9" fill="#d4953a" text-anchor="middle" font-style="italic">Stable</text>
-          <text x="90" y="23" font-family="Playfair Display,serif" font-size="9" fill="#d4953a" text-anchor="middle" font-style="italic">coins</text>
+          <line x1="10" y1="108" x2="76" y2="108" stroke="#5a8cd0" stroke-width="2" marker-end="url(#ba1)"/>
+          <line x1="170" y1="108" x2="104" y2="108" stroke="#4caf82" stroke-width="2" marker-end="url(#ba2)"/>
+          <!-- peak medallion — fully inside viewBox (cy=46, r=22, top=24) -->
+          <circle cx="90" cy="46" r="24" fill="rgba(212,149,58,0.16)" stroke="#d4953a" stroke-width="1.8"/>
+          <text x="90" y="40" font-family="Playfair Display,serif" font-size="13" fill="#d4953a" text-anchor="middle" font-style="italic">Stable</text>
+          <text x="90" y="55" font-family="Playfair Display,serif" font-size="13" fill="#d4953a" text-anchor="middle" font-style="italic">coins</text>
           <!-- pillars -->
-          <rect x="0" y="84" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
-          <rect x="164" y="84" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
+          <rect x="0" y="114" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
+          <rect x="164" y="114" width="16" height="50" rx="2" fill="rgba(212,149,58,0.1)" stroke="rgba(212,149,58,0.25)" stroke-width="0.5"/>
           <!-- label -->
-          <text x="90" y="148" font-family="DM Mono,monospace" font-size="9" fill="rgba(240,237,230,0.4)" text-anchor="middle" letter-spacing="2" text-transform="uppercase">THE BRIDGE</text>
+          <text x="90" y="175" font-family="DM Mono,monospace" font-size="9" fill="rgba(240,237,230,0.4)" text-anchor="middle" letter-spacing="2">THE BRIDGE</text>
         </svg>
-        <div style="font-size:14px;color:var(--ink-3);text-align:center;line-height:1.5;max-width:160px;font-family:var(--font-m);letter-spacing:.03em">Interface between bank money and digital markets</div>
+        <div style="font-size:15px;color:var(--gold);text-align:center;line-height:1.5;max-width:200px;font-family:var(--font-d);font-style:italic;margin-top:4px">The bridge between two worlds</div>
       </div>
 
       <!-- RIGHT: Crypto World -->
       <div style="background:rgba(20,26,20,0.9);border:1px solid rgba(240,237,230,0.12);border-radius:0 16px 16px 0;padding:32px 28px;border-left:none">
         <div style="font-family:var(--font-m);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#4caf82;margin-bottom:6px">Crypto world</div>
         <div style="font-family:var(--font-d);font-size:27px;margin-bottom:20px;color:#8de0b8">The programmable future</div>
-        <div style="font-size:16px;color:var(--ink-2);line-height:1.65;margin-bottom:24px">Built on open, 24/7 networks that prioritize instant settlement and borderless, self-custodied assets.</div>
+        <div style="font-size:16px;color:var(--ink-2);line-height:1.55;margin-bottom:24px">Built on open, 24/7 networks — instant settlement,<br>borderless and self-custodied assets.</div>
         <div style="display:flex;flex-direction:column;gap:10px">
           <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.18);border-radius:10px;padding:14px 16px">
             <div style="font-size:14px;font-weight:500;color:#8de0b8;margin-bottom:4px">Permissionless Access</div>
@@ -478,11 +487,11 @@ input[type=range]::-webkit-slider-thumb {
 
   <!-- ─────────── SLIDE 4: Fiat-backed ─────────── -->
   <div class="slide" id="s3">
-    <div class="slide-label">How it works</div>
+    <div class="slide-label">Why trust a stablecoin?</div>
     <div class="mech-layout">
       <div>
-        <div class="h2" style="margin-bottom:6px">Fiat-backed</div>
-        <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">Real dollars in a real bank</div>
+        <div class="h2" style="margin-bottom:6px">How a fiat-backed stablecoin works</div>
+        <div style="font-size:19px;color:var(--ink-3);margin-bottom:28px;font-family:var(--font-m)">Each token backed 1:1 by real dollars held in a regulated bank</div>
         <div class="flow-steps">
           <div class="fstep"><div class="fstep-num">01</div><div><div class="fstep-label">You deposit $100 USD</div><div class="fstep-sub">Sent to the issuer (e.g. Circle)</div></div></div>
           <div class="fstep"><div class="fstep-num">02</div><div><div class="fstep-label">Custodian holds the cash</div><div class="fstep-sub">Regulated bank, audited reserves</div></div></div>
@@ -510,21 +519,14 @@ input[type=range]::-webkit-slider-thumb {
             <div class="pc-item dot-r">Banking system risk</div>
           </div>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:12px">
-          <div style="font-family:var(--font-m);font-size:14px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Stability rating</div>
-          <div class="stars" style="margin-bottom:4px">
-            <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-          </div>
-          <div style="font-size:17px;color:var(--ink-2)">Highest available — battle-tested at scale</div>
-        </div>
+
       </div>
     </div>
   </div>
 
   <!-- ─────────── SLIDE 8: Comparison ─────────── -->
   <div class="slide" id="s4">
-    <div class="slide-label">Summary</div>
-    <div class="h2" style="align-self:flex-start;margin-bottom:28px;width:100%;max-width:1100px">Three models —<br>one promise</div>
+    <div class="h2" style="align-self:flex-start;margin-bottom:28px;width:100%;max-width:1100px">2 other models <em style="color:var(--gold);font-style:italic">promising stability</em></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:1100px">
 
       <!-- Fiat-backed -->
@@ -574,14 +576,12 @@ input[type=range]::-webkit-slider-thumb {
 
   <!-- ─────────── SLIDE 3: Transaction Flow ─────────── -->
   <div class="slide" id="s5" style="padding:36px 56px 110px;">
-    <div style="display:flex;align-items:center;gap:16px;align-self:flex-start;flex-shrink:0;margin-bottom:8px;flex-wrap:wrap">
-      <div class="slide-label" style="margin-bottom:0">Transaction flow</div>
-      <div style="width:1px;height:16px;background:var(--border2)"></div>
-      <div style="font-family:var(--font-d);font-size:clamp(16px,1.9vw,24px);letter-spacing:-0.01em">The fiat <em style="color:var(--gold);font-style:italic">&#8594; stablecoin &#8594;</em> fiat sandwich</div>
-      <div style="font-size:14px;color:var(--ink-3);font-family:var(--font-m)">Providers in a cross-border stablecoin transaction</div>
+    <div style="align-self:flex-start;flex-shrink:0;margin-bottom:12px">
+      <div class="h2" style="font-size:clamp(20px,2.4vw,32px);margin-bottom:4px"><em style="color:var(--gold);font-style:italic">fiat &#8594; stablecoin &#8594; fiat</em> sandwich: the architecture of a cross-border transfer</div>
+      <div style="font-size:14px;color:var(--ink-3);font-family:var(--font-m)">Providers involved in a typical cross-border stablecoin transaction</div>
     </div>
     <div style="flex:1;width:100%;min-height:0;overflow:hidden">
-      <svg width="100%" height="100%" viewBox="0 0 1160 440" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" height="100%" viewBox="0 0 1160 355" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -590,161 +590,158 @@ input[type=range]::-webkit-slider-thumb {
             .nt{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:500}
             .ns{font-family:"DM Sans",sans-serif;font-size:14px}
             .al{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+            .lbl{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
           </style>
         </defs>
 
-        <!-- ── Phase bands (vertical columns) ── -->
-        <rect x="0"   y="0" width="270" height="420" fill="rgba(90,140,200,0.05)"/>
-        <rect x="270" y="0" width="300" height="420" fill="rgba(140,100,220,0.06)"/>
-        <rect x="570" y="0" width="300" height="420" fill="rgba(140,100,220,0.06)"/>
-        <rect x="870" y="0" width="290" height="420" fill="rgba(90,140,200,0.05)"/>
+        <!-- ── Phase bands ── -->
+        <rect x="0"   y="0" width="163" height="335" fill="rgba(90,140,200,0.05)"/>
+        <rect x="163" y="0" width="395" height="335" fill="rgba(140,100,220,0.06)"/>
+        <rect x="558" y="0" width="414" height="335" fill="rgba(140,100,220,0.06)"/>
+        <rect x="972" y="0" width="188" height="335" fill="rgba(90,140,200,0.05)"/>
 
         <!-- Phase dividers -->
-        <line x1="270" y1="10" x2="270" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="570" y1="10" x2="570" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="870" y1="10" x2="870" y2="410" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="163" y1="10" x2="163" y2="325" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="558" y1="10" x2="558" y2="325" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="972" y1="10" x2="972" y2="325" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4"/>
 
         <!-- Phase headers -->
-        <text x="135" y="22" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-in</text>
-        <text x="420" y="22" class="al" fill="#8a6ad4" text-anchor="middle">On-ramp</text>
-        <text x="720" y="22" class="al" fill="#8a6ad4" text-anchor="middle">On-chain + off-ramp</text>
-        <text x="1015" y="22" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-out</text>
+        <text x="82"  y="20" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-in</text>
+        <text x="360" y="20" class="al" fill="#8a6ad4" text-anchor="middle">On-ramp</text>
+        <text x="765" y="20" class="al" fill="#8a6ad4" text-anchor="middle">On-chain + off-ramp</text>
+        <text x="1066" y="20" class="al" fill="#5a8cd0" text-anchor="middle">Fiat-out</text>
 
-        <!-- ══════════════════════════════════════════ -->
-        <!-- HORIZONTAL SPINE: Sender → … → Recipient  -->
-        <!-- ══════════════════════════════════════════ -->
+        <!-- ══ SPINE ══ all boxes cy=190 -->
 
         <!-- Sender -->
-        <rect x="20" y="190" width="150" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
-        <text x="95" y="212" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Sender</text>
-        <text x="95" y="226" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
+        <rect x="8" y="172" width="108" height="36" rx="6" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
+        <text x="62" y="183" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Sender</text>
+        <text x="62" y="197" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
 
-        <!-- → Fiat payment provider -->
-        <line x1="170" y1="212" x2="285" y2="212" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
-        <text x="227" y="206" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
+        <!-- GAP 1: fiat rails label ABOVE, arrow below -->
+        <rect x="124" y="146" width="84" height="18" rx="4" fill="rgba(212,149,58,0.18)" stroke="rgba(212,149,58,0.4)" stroke-width="0.5"/>
+        <text x="166" y="159" class="lbl" fill="#d4953a" text-anchor="middle">fiat rails</text>
+        <line x1="116" y1="190" x2="214" y2="190" stroke="#d4953a" stroke-width="1.8" marker-end="url(#ah)"/>
 
-        <!-- Fiat payment provider -->
-        <rect x="285" y="182" width="160" height="52" rx="8" fill="#161c28" stroke="#5a8cd0" stroke-width="1"/>
-        <text x="365" y="202" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Fiat payment</text>
-        <text x="365" y="218" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <!-- Fiat payment -->
+        <rect x="216" y="172" width="140" height="36" rx="6" fill="#161c28" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="286" y="183" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Fiat payment</text>
+        <text x="286" y="197" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
 
-        <!-- → On-ramp -->
-        <line x1="445" y1="208" x2="495" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <!-- GAP 2: plain arrow -->
+        <line x1="356" y1="190" x2="394" y2="190" stroke="#d4953a" stroke-width="1.8" marker-end="url(#ah)"/>
 
-        <!-- On-ramp provider -->
-        <rect x="495" y="182" width="150" height="52" rx="8" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
-        <text x="570" y="202" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-ramp</text>
-        <text x="570" y="218" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <!-- On-ramp -->
+        <rect x="396" y="172" width="120" height="36" rx="6" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="456" y="183" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-ramp</text>
+        <text x="456" y="197" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
 
-        <!-- → stablecoin spine (dashed gold) -->
-        <line x1="645" y1="208" x2="715" y2="208" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
-        <rect x="648" y="196" width="64" height="15" rx="3" fill="#0e0d0b"/>
-        <text x="680" y="207" class="al" fill="#d4953a" text-anchor="middle">stablecoin</text>
+        <!-- GAP 3: stablecoin label ABOVE, dashed arrow -->
+        <rect x="524" y="146" width="96" height="18" rx="4" fill="rgba(212,149,58,0.18)" stroke="rgba(212,149,58,0.4)" stroke-width="0.5"/>
+        <text x="572" y="159" class="lbl" fill="#d4953a" text-anchor="middle">stablecoin</text>
+        <line x1="516" y1="190" x2="582" y2="190" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
 
-        <!-- On-chain settlement box -->
-        <rect x="715" y="168" width="170" height="80" rx="8" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
-        <text x="800" y="196" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-chain</text>
-        <text x="800" y="212" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">orchestration</text>
-        <text x="800" y="228" class="ns" fill="#6a50a8" text-anchor="middle" dominant-baseline="central">+ blockchain network</text>
+        <!-- On-chain -->
+        <rect x="584" y="162" width="158" height="56" rx="6" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
+        <text x="663" y="175" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">On-chain</text>
+        <text x="663" y="189" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">orchestration</text>
+        <text x="663" y="203" class="ns" fill="#6a50a8" text-anchor="middle" dominant-baseline="central">+ blockchain network</text>
 
-        <!-- → Off-ramp (dashed gold) -->
-        <line x1="885" y1="208" x2="935" y2="208" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
+        <!-- GAP 4: stablecoin label ABOVE, dashed arrow -->
+        <rect x="750" y="146" width="96" height="18" rx="4" fill="rgba(212,149,58,0.18)" stroke="rgba(212,149,58,0.4)" stroke-width="0.5"/>
+        <text x="798" y="159" class="lbl" fill="#d4953a" text-anchor="middle">stablecoin</text>
+        <line x1="742" y1="190" x2="808" y2="190" stroke="#d4953a" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ah)"/>
 
-        <!-- Off-ramp provider -->
-        <rect x="935" y="182" width="150" height="52" rx="8" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
-        <text x="1010" y="202" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
-        <text x="1010" y="218" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <!-- Off-ramp -->
+        <rect x="810" y="172" width="120" height="36" rx="6" fill="#1a1228" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="870" y="183" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
+        <text x="870" y="197" class="ns" fill="#8a70c0" text-anchor="middle" dominant-baseline="central">provider</text>
 
-        <!-- → Local fiat -->
-        <line x1="1085" y1="208" x2="1148" y2="208" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
-        <rect x="1086" y="192" width="62" height="15" rx="3" fill="#0e0d0b"/>
-        <text x="1117" y="202" class="al" fill="#9a7040" text-anchor="middle">fiat rails</text>
+        <!-- GAP 5: fiat rails label ABOVE, arrow below -->
+        <rect x="938" y="146" width="84" height="18" rx="4" fill="rgba(212,149,58,0.18)" stroke="rgba(212,149,58,0.4)" stroke-width="0.5"/>
+        <text x="980" y="159" class="lbl" fill="#d4953a" text-anchor="middle">fiat rails</text>
+        <line x1="930" y1="190" x2="1028" y2="190" stroke="#d4953a" stroke-width="1.8" marker-end="url(#ah)"/>
 
         <!-- Recipient -->
-        <rect x="990" y="300" width="160" height="44" rx="8" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
-        <text x="1070" y="320" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Recipient</text>
-        <text x="1070" y="334" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
+        <rect x="1030" y="172" width="108" height="36" rx="6" fill="#1e1a12" stroke="#d4953a" stroke-width="1.5"/>
+        <text x="1084" y="183" class="nt" fill="#e8d0a0" text-anchor="middle" dominant-baseline="central">Recipient</text>
+        <text x="1084" y="197" class="ns" fill="#b09070" text-anchor="middle" dominant-baseline="central">account</text>
 
-        <!-- Local fiat → Recipient (L-path) -->
-        <path d="M1153 208 L1160 208 L1160 322 L1150 322" fill="none" stroke="#d4953a" stroke-width="1.5" marker-end="url(#ah)"/>
+        <!-- ══ TOP SATELLITES (y=52, h=32) ══ -->
 
-        <!-- ══════════ TOP SATELLITES ══════════ -->
+        <!-- KYC/KYB above Fiat payment -->
+        <rect x="216" y="52" width="140" height="32" rx="6" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="286" y="63" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">KYC / KYB</text>
+        <text x="286" y="76" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <line x1="286" y1="84" x2="286" y2="172" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="294" y="130" class="al" fill="#5a8cd0">compliance</text>
 
-        <!-- KYC/KYB -->
-        <rect x="285" y="60" width="160" height="44" rx="8" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
-        <text x="365" y="78" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">KYC / KYB</text>
-        <text x="365" y="92" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
-        <line x1="365" y1="104" x2="365" y2="182" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="373" y="148" class="al" fill="#5a8cd0">compliance</text>
+        <!-- On-ramp liquidity above On-ramp -->
+        <rect x="396" y="52" width="120" height="32" rx="6" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
+        <text x="456" y="63" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">On-ramp</text>
+        <text x="456" y="76" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
+        <line x1="456" y1="84" x2="456" y2="172" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text x="464" y="130" class="al" fill="#4caf82">bridges gaps</text>
 
-        <!-- On-ramp liquidity -->
-        <rect x="495" y="60" width="150" height="44" rx="8" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
-        <text x="570" y="78" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">On-ramp</text>
-        <text x="570" y="92" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
-        <line x1="570" y1="104" x2="570" y2="182" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
-        <text x="578" y="148" class="al" fill="#4caf82">bridges gaps</text>
+        <!-- Wallet/custody above On-chain -->
+        <rect x="584" y="52" width="158" height="32" rx="6" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
+        <text x="663" y="63" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Wallet / custody</text>
+        <text x="663" y="76" class="ns" fill="#7a60c0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <line x1="663" y1="84" x2="663" y2="162" stroke="#8a6ad4" stroke-width="1" marker-end="url(#ah)"/>
+        <text x="671" y="122" class="al" fill="#8a6ad4">safe custody</text>
 
-        <!-- Wallet/custody -->
-        <rect x="715" y="60" width="170" height="44" rx="8" fill="#160e28" stroke="#8a6ad4" stroke-width="1"/>
-        <text x="800" y="78" class="nt" fill="#c8b0f0" text-anchor="middle" dominant-baseline="central">Wallet / custody</text>
-        <text x="800" y="92" class="ns" fill="#7a60c0" text-anchor="middle" dominant-baseline="central">provider</text>
-        <line x1="800" y1="104" x2="800" y2="168" stroke="#8a6ad4" stroke-width="1" marker-end="url(#ah)"/>
-        <text x="808" y="140" class="al" fill="#8a6ad4">safe custody</text>
+        <!-- Off-ramp liquidity above Off-ramp -->
+        <rect x="810" y="52" width="120" height="32" rx="6" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
+        <text x="870" y="63" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
+        <text x="870" y="76" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
+        <line x1="870" y1="84" x2="870" y2="172" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+        <text x="878" y="130" class="al" fill="#4caf82">bridges gaps</text>
 
-        <!-- Off-ramp liquidity -->
-        <rect x="935" y="60" width="150" height="44" rx="8" fill="#0e2018" stroke="#4caf82" stroke-width="1"/>
-        <text x="1010" y="78" class="nt" fill="#8de0b8" text-anchor="middle" dominant-baseline="central">Off-ramp</text>
-        <text x="1010" y="92" class="ns" fill="#4a8a68" text-anchor="middle" dominant-baseline="central">liquidity provider</text>
-        <line x1="1010" y1="104" x2="1010" y2="182" stroke="#4caf82" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#ah)"/>
-        <text x="1018" y="148" class="al" fill="#4caf82">bridges gaps</text>
+        <!-- ══ BOTTOM SATELLITES ══ -->
 
-        <!-- ══════════ BOTTOM SATELLITES ══════════ -->
+        <!-- Travel Rule (below Fiat payment) -->
+        <rect x="216" y="252" width="78" height="44" rx="6" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
+        <text x="255" y="266" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Travel</text>
+        <text x="255" y="280" class="ns" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Rule</text>
+        <text x="255" y="292" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
+        <path d="M294 268 L396 208" fill="none" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
+        <rect x="316" y="236" width="66" height="13" rx="3" fill="#0e0d0b"/>
+        <text x="349" y="245" class="al" fill="#5a8cd0" text-anchor="middle">reporting</text>
 
-        <!-- Crypto exchange + issuer (on-ramp) -->
-        <rect x="380" y="300" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
-        <text x="454" y="322" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
-        <rect x="380" y="344" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
-        <text x="454" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
-        <!-- lines to on-ramp -->
-        <path d="M528 318 L570 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <rect x="422" y="264" width="96" height="16" rx="3" fill="#0e0d0b"/>
-        <text x="470" y="275" class="al" fill="#d45a7a" text-anchor="middle">exchanges fiat</text>
-        <path d="M528 362 L570 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <rect x="497" y="300" width="40" height="16" rx="3" fill="#0e0d0b"/>
-        <text x="517" y="311" class="al" fill="#d45a7a" text-anchor="middle">mints</text>
+        <!-- Crypto exchange + Stablecoin issuer (on-ramp side) -->
+        <rect x="308" y="252" width="130" height="26" rx="6" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="373" y="269" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
+        <rect x="308" y="284" width="130" height="26" rx="6" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="373" y="301" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
+        <path d="M438 265 L456 208" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <rect x="416" y="232" width="90" height="13" rx="3" fill="#0e0d0b"/>
+        <text x="461" y="241" class="al" fill="#d45a7a" text-anchor="middle">exchanges fiat</text>
+        <path d="M438 297 L456 214" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <rect x="436" y="263" width="36" height="13" rx="3" fill="#0e0d0b"/>
+        <text x="454" y="272" class="al" fill="#d45a7a" text-anchor="middle">mints</text>
 
-        <!-- Travel Rule -->
-        <rect x="285" y="300" width="80" height="60" rx="8" fill="#101828" stroke="#5a8cd0" stroke-width="1"/>
-        <text x="325" y="320" class="nt" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Travel</text>
-        <text x="325" y="336" class="ns" fill="#a8c8e8" text-anchor="middle" dominant-baseline="central">Rule</text>
-        <text x="325" y="350" class="ns" fill="#6a90b0" text-anchor="middle" dominant-baseline="central">provider</text>
-        <path d="M365 330 L445 230" fill="none" stroke="#5a8cd0" stroke-width="1" marker-end="url(#ah)"/>
-        <rect x="347" y="282" width="74" height="16" rx="3" fill="#0e0d0b"/>
-        <text x="384" y="293" class="al" fill="#5a8cd0" text-anchor="middle">reporting</text>
+        <!-- Crypto exchange + Stablecoin issuer (off-ramp side) -->
+        <rect x="680" y="252" width="130" height="26" rx="6" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="745" y="269" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
+        <rect x="680" y="284" width="130" height="26" rx="6" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
+        <text x="745" y="301" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
+        <path d="M810 265 L870 208" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <rect x="816" y="232" width="68" height="13" rx="3" fill="#0e0d0b"/>
+        <text x="850" y="241" class="al" fill="#d45a7a" text-anchor="middle">exchanges</text>
+        <path d="M810 297 L870 214" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
+        <rect x="814" y="263" width="40" height="13" rx="3" fill="#0e0d0b"/>
+        <text x="834" y="272" class="al" fill="#d45a7a" text-anchor="middle">burns</text>
 
-        <!-- Crypto exchange + issuer (off-ramp) -->
-        <rect x="840" y="300" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
-        <text x="914" y="322" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Crypto exchange</text>
-        <rect x="840" y="344" width="148" height="36" rx="8" fill="#28100e" stroke="#d45a7a" stroke-width="1"/>
-        <text x="914" y="366" class="nt" fill="#e8a0b0" text-anchor="middle" dominant-baseline="central">Stablecoin issuer</text>
-        <!-- lines to off-ramp -->
-        <path d="M988 318 L1010 234" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <rect x="920" y="264" width="76" height="16" rx="3" fill="#0e0d0b"/>
-        <text x="958" y="275" class="al" fill="#d45a7a" text-anchor="middle">exchanges</text>
-        <path d="M988 362 L1010 240" fill="none" stroke="#d45a7a" stroke-width="1" marker-end="url(#ah)"/>
-        <rect x="930" y="306" width="46" height="16" rx="3" fill="#0e0d0b"/>
-        <text x="953" y="317" class="al" fill="#d45a7a" text-anchor="middle">burns</text>
-
-        <!-- ══════════ LEGEND ══════════ -->
-        <rect x="20" y="392" width="500" height="20" rx="4" fill="rgba(14,13,11,0.75)"/>
-        <circle cx="36"  cy="402" r="5" fill="none" stroke="#5a8cd0" stroke-width="1.5"/>
-        <text x="46"  y="406" class="al" fill="#5a8cd0">Compliance/KYC</text>
-        <circle cx="168" cy="402" r="5" fill="none" stroke="#d45a7a" stroke-width="1.5"/>
-        <text x="178" y="406" class="al" fill="#d45a7a">Issuers/Exchanges</text>
-        <circle cx="310" cy="402" r="5" fill="none" stroke="#8a6ad4" stroke-width="1.5"/>
-        <text x="320" y="406" class="al" fill="#8a6ad4">On-chain</text>
-        <circle cx="396" cy="402" r="5" fill="none" stroke="#4caf82" stroke-width="1.5"/>
-        <text x="406" y="406" class="al" fill="#4caf82">Liquidity</text>
+        <!-- ══ LEGEND ══ -->
+        <rect x="8" y="330" width="500" height="18" rx="4" fill="rgba(14,13,11,0.75)"/>
+        <circle cx="24"  cy="339" r="4" fill="none" stroke="#5a8cd0" stroke-width="1.5"/>
+        <text x="33"  y="343" class="al" fill="#5a8cd0">Compliance/KYC</text>
+        <circle cx="158" cy="339" r="4" fill="none" stroke="#d45a7a" stroke-width="1.5"/>
+        <text x="167" y="343" class="al" fill="#d45a7a">Issuers/Exchanges</text>
+        <circle cx="300" cy="339" r="4" fill="none" stroke="#8a6ad4" stroke-width="1.5"/>
+        <text x="309" y="343" class="al" fill="#8a6ad4">On-chain</text>
+        <circle cx="386" cy="339" r="4" fill="none" stroke="#4caf82" stroke-width="1.5"/>
+        <text x="395" y="343" class="al" fill="#4caf82">Liquidity</text>
       </svg>
     </div>
   </div>
@@ -754,9 +751,9 @@ input[type=range]::-webkit-slider-thumb {
 
   <!-- ─────────── SLIDE 4: SEPA vs Stablecoins ─────────── -->
   <div class="slide" id="s6" style="padding:28px 52px 100px;">
-    <div class="slide-label" style="align-self:flex-start">Euro payments · Context</div>
+    <div class="slide-label" style="align-self:flex-start">What's the problem?</div>
     <div style="font-family:var(--font-d);font-size:clamp(20px,2.5vw,34px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
-      Same promise: instant euros. <em style="color:var(--gold);font-style:italic">Different superpower.</em>
+      Instant transfers are already a <em style="color:var(--gold);font-style:italic">reality in the Eurozone</em>
     </div>
     <div style="font-size:15px;color:var(--ink-3);align-self:flex-start;margin-bottom:16px;font-family:var(--font-m);flex-shrink:0">
       Both move euros 24/7 digitally — but they are not optimised for the same world
@@ -866,14 +863,14 @@ input[type=range]::-webkit-slider-thumb {
   <!-- ─────────── SLIDE 5: Fracturedcoin ─────────── -->
   <div class="slide" id="s7" style="padding:28px 64px 100px;">
     <div class="bg-circle" style="width:500px;height:500px;background:radial-gradient(circle,rgba(224,90,90,0.05) 0%,transparent 70%);right:-100px;top:-100px;"></div>
-    <div class="slide-label" style="align-self:flex-start">BIS · March 2026</div>
+    <div class="slide-label" style="align-self:flex-start">The reality</div>
 
     <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;width:100%;max-width:1160px;align-items:start">
 
       <!-- LEFT: main argument -->
       <div>
         <div style="font-family:var(--font-d);font-size:clamp(26px,3vw,42px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:8px">
-          Stablecoin <em style="color:var(--red);font-style:italic">= Fracturedcoin</em>
+          The reality of Stablecoins is <em style="color:var(--red);font-style:italic">fragmented</em>
         </div>
         <div style="font-size:16px;color:var(--ink-3);font-family:var(--font-m);margin-bottom:24px;letter-spacing:.04em">
           Fragmentation is a feature, not a bug — BIS / Hyun Song Shin (2026)
@@ -987,18 +984,19 @@ input[type=range]::-webkit-slider-thumb {
       <div style="font-size:15px;color:var(--ink-3);font-family:var(--font-m)">Visa · Mastercard · March 2025</div>
     </div>
     <div style="font-family:var(--font-d);font-size:clamp(20px,2.4vw,32px);align-self:flex-start;margin-bottom:4px;letter-spacing:-0.01em;flex-shrink:0">
-      Agentic commerce: <em style="color:var(--gold);font-style:italic">cards first,</em> stablecoins where they add value
+      Agentic commerce: <em style="color:var(--gold);font-style:italic">cards first</em> — stablecoins extra-value is unclear
     </div>
     <div style="font-size:15px;color:var(--ink-3);align-self:flex-start;margin-bottom:16px;font-family:var(--font-m);flex-shrink:0">
       AI agents will buy things — the question is which rails they use, and when
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 220px 1fr;gap:0;width:100%;max-width:1160px;flex:1;min-height:0">
+    <div style="display:grid;grid-template-columns:1fr 220px;gap:0;width:100%;max-width:860px;flex:1;min-height:0">
 
       <!-- ── LEFT: Cards first (Phase 1) ── -->
       <div style="background:rgba(22,24,36,0.95);border:1px solid rgba(90,120,210,0.28);border-radius:16px 0 0 16px;padding:22px 20px;border-right:none;display:flex;flex-direction:column;gap:10px">
-        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7090d8;margin-bottom:2px">Phase 1</div>
-        <div style="font-family:var(--font-d);font-size:22px;color:#b0c4f8;margin-bottom:8px;line-height:1.1">Cards as the<br>trust wrapper</div>
+        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7090d8;margin-bottom:2px">The default today</div>
+        <div style="font-family:var(--font-d);font-size:22px;color:#b0c4f8;margin-bottom:4px;line-height:1.1">Cards as the trust wrapper</div>
+        <div style="font-family:var(--font-m);font-size:13px;color:#7090d8;letter-spacing:.06em;margin-bottom:10px">Visa Intelligent Commerce &nbsp;·&nbsp; Mastercard Agent Pay</div>
         <div style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:12px">For the first wave of shopping agents, networks don't need to reinvent commerce — they need to make <strong style="color:var(--ink);font-weight:500">existing commerce safe for machines.</strong></div>
 
         <div style="display:flex;flex-direction:column;gap:7px;flex:1">
@@ -1070,34 +1068,9 @@ input[type=range]::-webkit-slider-thumb {
           <div style="flex:1;height:2px;background:linear-gradient(to right,#7090d8,var(--gold),#4caf82)"></div>
           <div style="width:8px;height:8px;border-radius:50%;background:#4caf82"></div>
         </div>
-        <div style="font-family:var(--font-m);font-size:13px;color:var(--ink-3);text-align:center;margin-top:6px;letter-spacing:.04em">phase 1 → phase 2</div>
+        <div style="font-family:var(--font-m);font-size:13px;color:var(--ink-3);text-align:center;margin-top:6px;letter-spacing:.04em">cards → stablecoins?</div>
       </div>
 
-      <!-- ── RIGHT: Stablecoins later (Phase 2) ── -->
-      <div style="background:rgba(14,22,18,0.95);border:1px solid rgba(76,175,130,0.28);border-radius:0 16px 16px 0;padding:22px 20px;border-left:none;display:flex;flex-direction:column;gap:10px">
-        <div style="font-family:var(--font-m);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#4caf82;margin-bottom:2px">Phase 2</div>
-        <div style="font-family:var(--font-d);font-size:22px;color:#8de0b8;margin-bottom:8px;line-height:1.1">Stablecoins where<br>they add value</div>
-        <div style="font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:12px">Stablecoins expand where they solve a <strong style="color:var(--ink);font-weight:500">real plumbing problem</strong> — not as a replacement for cards, but as an upgrade to the back-end and multi-agent layer.</div>
-
-        <div style="display:flex;flex-direction:column;gap:7px;flex:1">
-          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
-            <div style="font-size:14px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Faster back-end settlement</div>
-            <div style="font-size:14px;color:var(--ink)">Visa already uses USDC/EURC for issuer &amp; acquirer settlement across blockchains — 24/7, no time-zone lag</div>
-          </div>
-          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
-            <div style="font-size:14px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Wallet-native funding</div>
-            <div style="font-size:14px;color:var(--ink)">Mastercard: "wallets to checkouts" — agents hold value on-chain, Mastercard bridges to merchant acceptance</div>
-          </div>
-          <div style="background:rgba(76,175,130,0.07);border:1px solid rgba(76,175,130,0.15);border-radius:9px;padding:11px 14px">
-            <div style="font-size:14px;font-family:var(--font-m);color:#4caf82;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Programmable multi-agent flows</div>
-            <div style="font-size:14px;color:var(--ink)">Sub-agents · conditional release · machine-to-machine · always-on spending rules — money that behaves like software</div>
-          </div>
-        </div>
-
-        <div style="border-top:1px solid rgba(76,175,130,0.15);padding-top:10px;font-size:15px;color:#6aba98;font-style:italic">
-          "Coordinate many autonomous agents — program money flows with rules and logic."
-        </div>
-      </div>
     </div>
   </div>
 
